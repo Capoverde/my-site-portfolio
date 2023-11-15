@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Antonio:100,200,300,regular,500,600,700);
 .bgShape1 {
   animation: one 10s infinite;
   filter: blur(100px);
@@ -16,8 +17,15 @@
   z-index: 1;
 }
 
-.HomePage__moreBtn {
-  /* text-transform: uppercase; */
+.header2 {
+  mix-blend-mode: multilpy;
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+}
+
+.resumeLink,
+.portfolioLink {
+  border-top: 1px solid #161616;
 }
 
 @keyframes one {

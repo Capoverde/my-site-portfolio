@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { Header } from "./components/Header/Header";
 import styles from "./Styles/HomePage.module.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -48,24 +49,24 @@ export default function Home() {
           className="
                      flex justify-between
                      h-full w-full z-10
-                     bg-pink-200
+                    
         "
         >
           <div
             className="HomePage__describe
-                       w-[50%] h-100
+                       w-[50%] h-100 flex flex-col
           "
           >
             <h1
               className={`${styles.HomePage__title}
-                           uppercase md:text-[9rem]
+                           uppercase md:text-[10rem]
             `}
             >
               słobiński
             </h1>
             <p
               className={`${styles.HomePage__describe}
-                            text-[1.1rem] 
+                            text-[1.1rem]
             `}
             >
               Pationate Fullstack web developer
@@ -77,11 +78,32 @@ export default function Home() {
             <div
               className={`${styles.HomePage__moreBtn}
                                uppercase font-extrabold
-                               my-5
+                               my-5 mb-20 py-1
+                               flex align-center
                 `}
-              href="/"
             >
-              learn more
+              learn more <FaArrowRight className="inline-block ml-3" />
+            </div>
+            <div className="about-box w-[45%]">
+              <div
+                className={`${styles.portfolioLink}
+                               flex justify-between items-center
+                               py-1
+                               uppercase w-full 
+              `}
+              >
+                <span className="font-bold italic">#01</span>
+                <span className="font-bold">portfolio</span>
+              </div>
+              <div
+                className={`${styles.resumeLink} 
+                             flex justify-between align-center 
+                             py-1
+                             uppercase w-full`}
+              >
+                <span className="font-bold italic">#02</span>
+                <span className="font-bold">resume</span>
+              </div>
             </div>
           </div>
           <div
@@ -91,17 +113,18 @@ export default function Home() {
           "
           >
             <Image
-              className="ml-auto"
+              className="ml-auto rounded-full"
               src="/profilImgTransp.webp"
               alt="Piotr Słobiński"
-              width={400}
-              height={400}
+              width={500}
+              height={300}
             />
             <h2
-              className="absolute uppercase
+              className={`${styles.header2} absolute uppercase
                          font-extrabold
-                         right-[10%] text-[10rem]
-            "
+                         right-[4%] bottom-[-35%]
+                         text-[14rem]
+            `}
             >
               dev
             </h2>
