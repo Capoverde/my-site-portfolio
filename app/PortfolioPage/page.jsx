@@ -1,6 +1,8 @@
 "use client"
 import React from 'react'
 import { Header } from '../components/Header/Header'
+import { FeaturesTitle } from '../components/FeaturesTitle'
+import { Card } from '../components/Card'
 
 const features = [ 
     {
@@ -37,20 +39,25 @@ const Portfolio = () => {
         <h1 className="title font-bold text-[6rem] pt-[3rem] px-[10%]">Portfolio</h1>  
       </header>
       <main className='min-w-screen min-h-screen bg-gray-200 px-[10%]'>
-        <div className="flex w-full h-full gap-20">
-            <div className='w-full h-full'>
+        <div className="flex w-full h-full gap-20 items-start">
+            <div className='w-full py-[50vh]'>
                 <ul>
                    {features.map((feature) => (
                     <li key={feature.id}>
-                       <p className="text-5xl text-gray-500 font-extrabold py-16 ">{feature.title}</p>
+                       <FeaturesTitle>{feature.title}</FeaturesTitle>
                     </li>
                    ))} 
                 </ul>
             </div>
-            <div className='w-full'>
-                <div className="sticky top-0 w-full aspect-square bg-gray-100">col</div>
+            <div className='w-full sticky top-0 flex h-screen items-center'>
+                <div className="w-full aspect-square bg-gray-100">
+                    <Card gradient="from-[#f7f0ff] to-[#a78afe]">
+                        I am a Card
+                    </Card>
+                </div>
             </div>
         </div>
+        <div className="h-screen"></div>
       </main>
     </>
   )
