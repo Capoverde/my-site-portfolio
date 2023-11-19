@@ -1,4 +1,5 @@
 import { DM_Sans } from "next/font/google";
+// import { motion as m, AnimatePresence } from 'framer-motion'
 import "./Styles/globals.css";
 
 const DMsans = DM_Sans({ subsets: ["latin"] });

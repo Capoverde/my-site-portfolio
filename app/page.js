@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Header } from "./components/Header/Header";
 import styles from "./Styles/HomePage.module.css";
-import { Link } from "react-router-dom";
+import Link  from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
@@ -75,35 +75,28 @@ export default function Home() {
               <br />
               with a keen eye for details.
             </p>
-            <div
-              className={`${styles.HomePage__moreBtn}
-                               uppercase font-extrabold
-                               my-5 mb-20 py-1
-                               flex align-center
-                `}
-            >
-              learn more <FaArrowRight className="inline-block ml-3" />
-            </div>
-            <div className="about-box w-full">
-              <div
+            <div className="about-box w-full mt-10">
+              <Link
+                href='#'
                 className={`${styles.portfolioLink}
                                flex justify-between items-center
-                               py-1
+                               py-1 cursor-pointer
                                uppercase w-full 
               `}
               >
                 <span className="font-bold italic">#01</span>
                 <span className="font-bold">portfolio</span>
-              </div>
-              <div
+              </Link>
+              <Link
+                href='#'
                 className={`${styles.resumeLink} 
                              flex justify-between align-center 
                              py-1
-                             uppercase w-full`}
+                             uppercase w-full cursor-pointer`}
               >
                 <span className="font-bold italic">#02</span>
                 <span className="font-bold">resume</span>
-              </div>
+              </Link>
             </div>
           </div>
           <div

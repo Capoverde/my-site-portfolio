@@ -9,3 +9,11 @@
 .nav__listItem {
   border-bottom: 1px solid #161616;
 }
+
+.nav__listItemLink {
+  transition: background-color 0.35s ease-in-out;
+}
+
+.nav__listItemLink:hover {
+  background-color: rgb(148,163,184);
+}

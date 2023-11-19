@@ -18,13 +18,13 @@ export const Header = () => {
         <Link href="/" className="block">
           <div className="logo-box font-extrabold">DEV</div>
         </Link>
-        <Link href="/" className="block">
+        <Link href="/ContactPage" className="block">
           <span className="contact inline-block">
             cont<strong>@</strong>ct
           </span>
         </Link>
         <Hamburger
-          className={`${styles.Hamburger}`}
+          className={`${styles.Hamburger} sticky`}
           toggled={isOpen}
           toggle={setOpen}
         />
