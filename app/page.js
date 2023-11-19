@@ -13,7 +13,7 @@ export default function Home() {
         className={`${styles.HomePage}
                          min-w-screen min-h-screen
                          relative overflow-hidden
-                         px-[10%]
+                         px-[10%] bg-gray-200
       `}
       >
         <div

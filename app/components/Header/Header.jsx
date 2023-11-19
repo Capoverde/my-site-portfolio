@@ -13,7 +13,7 @@ export const Header = () => {
       <header
         className={`${styles.page__header} 
                       flex justify-between items-center
-                      py-2 px-[10%]`}
+                      py-2 px-[10%] bg-gray-200`}
       >
         <Link href="/" className="block">
           <div className="logo-box font-extrabold">DEV</div>
@@ -23,9 +23,13 @@ export const Header = () => {
             cont<strong>@</strong>ct
           </span>
         </Link>
-        <Hamburger className="z-50" toggled={isOpen} toggle={setOpen} />
+        <Hamburger
+          className={`${styles.Hamburger}`}
+          toggled={isOpen}
+          toggle={setOpen}
+        />
       </header>
-      <Menu className="absolute z-30" isOpen={isOpen} />
+      <Menu isOpen={isOpen} />
     </>
   );
 };

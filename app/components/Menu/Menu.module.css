@@ -5,3 +5,7 @@
 .open {
   display: block;
 }
+
+.nav__listItem {
+  border-bottom: 1px solid #161616;
+}
