@@ -17,7 +17,9 @@ export const Header = () => {
         <div className="logo-box font-extrabold">DEV</div>
       </Link>
       <Link href="/" className="block">
-        <span className="contact inline-block">cont@ct</span>
+        <span className="contact inline-block">
+          cont<strong>@</strong>ct
+        </span>
       </Link>
       <Hamburger toggled={isOpen} toggle={setOpen} />
     </header>

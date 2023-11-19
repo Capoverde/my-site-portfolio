@@ -66,7 +66,7 @@ export default function Home() {
             </h1>
             <p
               className={`${styles.HomePage__describe}
-                            text-[1.1rem]
+                            text-[2rem]
             `}
             >
               Pationate Fullstack web developer
@@ -84,7 +84,7 @@ export default function Home() {
             >
               learn more <FaArrowRight className="inline-block ml-3" />
             </div>
-            <div className="about-box w-[45%]">
+            <div className="about-box w-full">
               <div
                 className={`${styles.portfolioLink}
                                flex justify-between items-center
@@ -122,8 +122,8 @@ export default function Home() {
             <h2
               className={`${styles.header2} absolute uppercase
                          font-extrabold
-                         right-[4%] bottom-[-35%]
-                         text-[14rem]
+                         right-[11%] bottom-[-22%]
+                         text-[17rem]
             `}
             >
               dev
