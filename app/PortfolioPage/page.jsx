@@ -42,13 +42,13 @@ const Portfolio = () => {
                 <ul>
                    {features.map((feature) => (
                     <li key={feature.id}>
-                       <p className="text-5xl text-gray-500 font-extrabold py-16">{feature.title}</p>
+                       <p className="text-5xl text-gray-500 font-extrabold py-16 ">{feature.title}</p>
                     </li>
                    ))} 
                 </ul>
             </div>
-            <div className='w-full h-full'>
-                <div className="sticky">col</div>
+            <div className='w-full'>
+                <div className="sticky top-0 w-full aspect-square bg-gray-100">col</div>
             </div>
         </div>
       </main>
