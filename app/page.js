@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react'
 import Image from "next/image";
 import { Header } from "./components/Header/Header";
 import styles from "./Styles/HomePage.module.css";
@@ -6,6 +7,16 @@ import Link  from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
+  const [isHovered, setIsHovered ] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <>
       <Header />
@@ -75,6 +86,16 @@ export default function Home() {
               <br />
               with a keen eye for details.
             </p>
+            <Link
+              href="/AboutPage"
+              className={`readMoreBtn uppercase my-8 font-extrabold text-2xl flex items-center ${isHovered ? 'jello' : ''}`}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <span>read more</span>{' '} <FaArrowRight 
+                className={`${styles.ArrowRight} ml-4 inline-block `}
+              />
+            </Link>
             <div className="about-box w-full mt-10">
               <Link
                 href='#'
