@@ -1,34 +1,42 @@
 "use client"
 import React from 'react'
+import {
+    CardProductCatalog,
+    WbsitteNext,
+    EventHorizon,
+    TheMet,
+    Interdom
+} from '../components/Card'
 import { Header } from '../components/Header/Header'
 import { FeaturesTitle } from '../components/FeaturesTitle'
-import { Card } from '../components/Card'
+import { FeatureCard } from '../components/Card'
 
 const features = [ 
     {
         title: "FullStack ToDo Applicaton",
-        id: "to-do-app"
+        id: "to-do-app",
+        card: CardProductCatalog,
     },
     {
         title: "FullStack product catalog store",
-        id: "product-catalog"
+        id: "product-catalog",
+        card: WbsitteNext,
     },
     {
         title: "Website in Next.js",
-        id: "lawyers-ebsite"
+        id: "lawyers-ebsite",
+        card: EventHorizon,
     },
     {
         title: "The Event Horizon",
-        id: "website and gallery"
+        id: "website and gallery",
+        card: TheMet,
     },
     {
         title: "The Met",
-        id: "museum-website"
+        id: "museum-website",
+        card: Interdom
     },
-    {
-        title: "Interdom",
-        id: "real-estate-website"
-    }
 ]
 
 const Portfolio = () => {
@@ -44,16 +52,18 @@ const Portfolio = () => {
                 <ul>
                    {features.map((feature) => (
                     <li key={feature.id}>
-                       <FeaturesTitle>{feature.title}</FeaturesTitle>
+                       <FeaturesTitle id={feature.id}>{feature.title}</FeaturesTitle>
                     </li>
                    ))} 
                 </ul>
             </div>
             <div className='w-full sticky top-0 flex h-screen items-center'>
-                <div className="w-full aspect-square bg-gray-100">
-                    <Card gradient="from-[#f7f0ff] to-[#a78afe]">
-                        I am a Card
-                    </Card>
+                <div className="relative w-full aspect-square bg-gray-100 rounded-[25px]">
+                    {features.map(feature => 
+                     <feature.card 
+                     id={feature.id}
+                     key={feature.id} />    
+                    )}
                 </div>
             </div>
         </div>
