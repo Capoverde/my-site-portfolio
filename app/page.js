@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Header } from "./components/Header/Header";
 import styles from "./Styles/HomePage.module.css";
@@ -8,6 +8,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
+  const [textColor, setTextColor] = useState("white");
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -17,14 +18,29 @@ export default function Home() {
     setIsHovered(false);
   };
 
+  useEffect(() => {
+    const container = document.getElementById("mainContainer");
+    const backgroundColor = window.getComputedStyle(container).backgroundColor;
+    const rgb = backgroundColor.match(/\d+/g);
+    const brightness =
+      (parseInt(rgb[0]) * 299 +
+        parseInt(rgb[1]) * 587 +
+        parseInt(rgb[2]) * 114) /
+      1000;
+
+    // Ustaw kolor tekstu w zależności od jasności tła
+    setTextColor(brightness > 128 ? "black" : "white");
+  }, []);
+
   return (
     <>
       <Header />
       <main
+        id="mainContainer"
         className={`${styles.HomePage}
-                         min-w-screen min-h-screen
-                         relative overflow-hidden
-                         pl-[10%] bg-gray-200
+                     min-w-screen min-h-screen
+                     relative overflow-hidden
+                     pl-[10%] bg-gray-200
       `}
       >
         <div
@@ -35,7 +51,7 @@ export default function Home() {
         >
           <div
             className={`${styles.bgShape1} 
-                           bg-purple-700 opacity-50
+                           bg-gray-700 opacity-50
                            rounded-full
                            relative
                            w-[900px] h-[400px]
@@ -43,14 +59,14 @@ export default function Home() {
           ></div>
           <div
             className={`${styles.bgShape2} 
-                             bg-blue-600 opacity-50
+                             bg-red-600 opacity-50
                              rounded-full relative
                              w-[600px] h-[600px]         
                 `}
           ></div>
           <div
             className={`${styles.bgShape3}  
-                        bg-pink-100 opacity-50
+                        bg-white-500 opacity-50
                         rounded-full relative
                         w-[600px] h-[600px]
           `}
@@ -64,16 +80,19 @@ export default function Home() {
         "
         >
           <div
-            className="HomePage__describe
-                       w-[50%] h-full flex flex-col
-          "
+            className={`HomePage__describe
+                         w-[40%] h-full flex flex-col
+          `}
           >
             <h1
               className={`${styles.HomePage__title}
-                           uppercase md:text-[10rem]
-            `}
+                           uppercase md:text-[9rem] 
+                           headerMain z-10
+                           ${
+                             textColor === "black" ? "text-black" : "text-white"
+                           }`}
             >
-              słobiński
+              słobiński<span className="text-white">.dev</span>
             </h1>
             <p
               className={`${styles.HomePage__describe}
@@ -105,18 +124,18 @@ export default function Home() {
           <div
             className="HomePage__image
                        w-full h-screen
-                       relative bg-black-100
+                       relative
                        
           "
           >
             <Image
-              className="ml-auto"
+              className="ml-auto bg-black"
               src="/Ja3.png"
               alt="Piotr Słobiński"
               width={0}
               height={0}
               sizes="100%"
-              style={{ width: "90%", height: "auto", objectFit: "contain" }}
+              style={{ width: "80%", height: "auto", objectFit: "contain" }}
             />
           </div>
         </section>
