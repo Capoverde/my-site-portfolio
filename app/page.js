@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className={`${styles.fadeIn}`}>
       <Header />
       <main
         id="mainContainer"
@@ -140,6 +140,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 }
