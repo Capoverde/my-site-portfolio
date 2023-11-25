@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion as m } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import styles from "./Menu.module.css";
@@ -26,7 +27,7 @@ export const Menu = ({ isOpen, onClose }) => {
   };
 
   const handleLinkClick = () => {
-    onClose(); 
+    onClose();
   };
 
   return (
@@ -58,6 +59,14 @@ export const Menu = ({ isOpen, onClose }) => {
           >
             <span className="text-[3rem] font-bold">#01</span>
             <span>home</span> <GoArrowDownRight />
+            <div className={`${styles.LinkImageLabel} absolute inset-0`}>
+              <Image
+                src="/profilImgTransp.webp"
+                width={200}
+                height={200}
+                alt="profil image"
+              />
+            </div>
           </Link>
         </li>
         <li
@@ -72,7 +81,7 @@ export const Menu = ({ isOpen, onClose }) => {
                                  w-full h-full px-32
                                  `}
             href="/AboutPage"
-            onClick={handleLinkClick} 
+            onClick={handleLinkClick}
           >
             <span className="text-[3rem] font-bold">#02</span>
             <span>about</span> <GoArrowDownRight />
@@ -108,7 +117,7 @@ export const Menu = ({ isOpen, onClose }) => {
                                      w-full h-full px-32 
           `}
             href="/ContactPage"
-            onClick={handleLinkClick} 
+            onClick={handleLinkClick}
           >
             <span className="text-[3rem] font-bold">#04</span>
             <span>contact</span> <GoArrowDownRight />
