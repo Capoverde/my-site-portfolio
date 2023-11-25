@@ -69,7 +69,6 @@ const Portfolio = () => {
                 </div>
             </div>
           </div>
-        <div className="h-screen"></div>
       </main>
     </>
   );

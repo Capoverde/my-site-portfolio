@@ -62,14 +62,6 @@ export const Menu = ({ isOpen, onClose }) => {
           >
             <span className="text-[3rem] font-bold">#01</span>
             <span>home</span> <GoArrowDownRight />
-            <div className={`${styles.LinkImageLabel} absolute inset-0`}>
-              <Image
-                src="/profilImgTransp.webp"
-                width={200}
-                height={200}
-                alt="profil image"
-              />
-            </div>
           </Link>
         </li>
         <li
