@@ -126,7 +126,7 @@ const layoutVariants = {
 
 const PortfolioPage = () => {
   return (
-    <div className={`${styles.puffInCenter} w-screen h-screen puff-in-center`}>
+    <div className={`${styles.fadeIn} w-screen h-screen puff-in-center`}>
       <Header />
       <header className="Portfolio__header bg-gray-200">
         <h1 className="title font-bold text-[6rem] pt-[3rem] px-[10%]">
