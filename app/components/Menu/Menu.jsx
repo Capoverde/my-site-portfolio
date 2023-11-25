@@ -34,9 +34,12 @@ export const Menu = ({ isOpen, onClose }) => {
     <m.nav
       className={`${styles.menu} ${
         isOpen ? styles.open : ""
-      } menu min-w-screen min-h-screen 
+      } menu w-full h-full py-10 mt-16
                flex justify-center align-center
-               bg-gray-200 absolute inset-0 z-30
+               bg-gray-200
+               absolute 
+               top-0 left-0 
+               z-30
              `}
       initial={false}
       animate={isOpen ? "open" : "closed"}
@@ -92,7 +95,7 @@ export const Menu = ({ isOpen, onClose }) => {
                     flex justify-center
                     text-[6rem]
             `}
-        >
+          >
           <Link
             className={`${styles.nav__listItemLink}
                                      flex justify-between items-center
@@ -113,8 +116,8 @@ export const Menu = ({ isOpen, onClose }) => {
         >
           <Link
             className={`${styles.nav__listItemLink}
-                                     flex justify-between items-center
-                                     w-full h-full px-32 
+                      flex justify-between items-center
+                      w-full h-full px-32 
           `}
             href="/ContactPage"
             onClick={handleLinkClick}

@@ -1,35 +1,43 @@
-"use client";
-import React from "react";
-import { Header } from "../components/Header/Header";
-import { FeaturesTitle } from "../components/FeaturesTitle";
-import { Card } from "../components/Card";
+"use client"
+import React from 'react'
+import {
+    CardProductCatalog,
+    WbsitteNext,
+    EventHorizon,
+    TheMet,
+    Interdom
+} from '../components/Card'
+import { Header } from '../components/Header/Header'
+import { FeaturesTitle } from '../components/FeaturesTitle'
+import { FeatureCard } from '../components/Card'
 
-const features = [
-  {
-    title: "FullStack ToDo Applicaton",
-    id: "to-do-app",
-  },
-  {
-    title: "FullStack product catalog store",
-    id: "product-catalog",
-  },
-  {
-    title: "Website in Next.js",
-    id: "lawyers-ebsite",
-  },
-  {
-    title: "The Event Horizon",
-    id: "website and gallery",
-  },
-  {
-    title: "The Met",
-    id: "museum-website",
-  },
-  {
-    title: "Interdom",
-    id: "real-estate-website",
-  },
-];
+const features = [ 
+    {
+        title: "FullStack ToDo Applicaton",
+        id: "to-do-app",
+        card: CardProductCatalog,
+    },
+    {
+        title: "FullStack product catalog store",
+        id: "product-catalog",
+        card: WbsitteNext,
+    },
+    {
+        title: "Website in Next.js",
+        id: "lawyers-ebsite",
+        card: EventHorizon,
+    },
+    {
+        title: "The Event Horizon",
+        id: "website and gallery",
+        card: TheMet,
+    },
+    {
+        title: "The Met",
+        id: "museum-website",
+        card: Interdom
+    },
+]
 
 const Portfolio = () => {
   return (
@@ -42,26 +50,25 @@ const Portfolio = () => {
       </header>
       <main className="min-w-screen min-h-screen bg-gray-200 px-[10%]">
         <div className="flex w-full h-full gap-20 items-start">
-          <div className="w-full py-[50vh]">
-            {/* <p> */}
-              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, */}
-              {/* natus quasi. Mollitia reiciendis inventore assumenda cum placeat */}
-              {/* in quibusdam delectus. */}
-            {/* </p> */}
-            <ul>
-              {features.map((feature) => (
-                <li key={feature.id}>
-                  <FeaturesTitle>{feature.title}</FeaturesTitle>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="w-full sticky top-0 flex h-screen items-center">
-            <div className="w-full aspect-square bg-gray-100">
-              <Card gradient="from-[#f7f0ff] to-[#a78afe]">I am a Card</Card>
+            <div className='w-full py-[50vh]'>
+                <ul>
+                   {features.map((feature) => (
+                    <li key={feature.id}>
+                       <FeaturesTitle id={feature.id}>{feature.title}</FeaturesTitle>
+                    </li>
+                   ))} 
+                </ul>
+            </div>
+            <div className='w-full sticky top-0 flex h-screen items-center'>
+                <div className="relative w-full aspect-square bg-gray-100 rounded-[25px]">
+                    {features.map(feature => 
+                     <feature.card 
+                     id={feature.id}
+                     key={feature.id} />    
+                    )}
+                </div>
             </div>
           </div>
-        </div>
         <div className="h-screen"></div>
       </main>
     </>
