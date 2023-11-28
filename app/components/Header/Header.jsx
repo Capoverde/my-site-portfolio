@@ -13,7 +13,7 @@ export const Header = () => {
       <header
         className={`${styles.page__header} 
                       flex justify-between items-center
-                      py-2 px-[10%] bg-gray-200`}
+                      py-2 px-[10%] bg-transparent`}
       >
         <Link href="/" className="block">
           <div className="logo-box font-extrabold">DEV</div>

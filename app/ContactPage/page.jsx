@@ -18,8 +18,10 @@ const Contact = () => {
           </h1>
 
           <p className="mt-4 text-gray-500 dark:text-gray-400">
-            Ask us everything and we would love to hear from you
+          Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!<br/>
+          Ask me everything and I would love to hear from you.
           </p>
+            <h3 className="my-4">Call me or text me</h3>
           <div className="flex mt-4 -mx-1 5">
             <Link href="#">
             <FaPhoneAlt className="inline-block text-xl mr-3 text-gray-400 transition-colors duration-300 transform hover:text-blue-500" />

@@ -1,5 +1,9 @@
 .menu {
   display: none;
+  /* background-image: url('../../../public/menuBg.jpg'); */
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
 }
 
 .open {
@@ -18,6 +22,10 @@
   background-color: rgb(148,163,184);
 }
 
-.LinkImageLabel {
-  
+.no-scroll {
+  overflow: hidden !important;
+}
+
+.blob1{
+  filter: blur(30px)
 }
