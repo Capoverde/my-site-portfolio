@@ -37,7 +37,7 @@ export default function Home() {
       <Header />
       <main
         id="mainContainer"
-        className={`${styles.HomePage}
+        className={`${styles.HomePage} ${styles.FadeIn}
                      min-w-screen min-h-screen
                      relative overflow-hidden
                      pl-[10%] bg-gray-200
