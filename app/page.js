@@ -201,7 +201,7 @@ export default function Home() {
                       `}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               słobiński<span className="text-white">.dev</span>
             </m.h1>
@@ -211,7 +211,7 @@ export default function Home() {
             `}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
             >
               Pationate Fullstack web developer
               <br />
@@ -222,13 +222,18 @@ export default function Home() {
             <Link
               href="/AboutPage"
               className={`readMoreBtn uppercase my-8 
-              font-extrabold text-2xl flex items-center z-30 ${
-                isHovered ? "jello" : ""
-              }`}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              font-extrabold text-2xl flex items-center z-30`}
             >
-              <span>read more</span>{" "}
+              <m.span
+                             initial={{ y: 20, opacity: 0 }}
+                             animate={{ y: 0, opacity: 1 }}
+                             transition={{ duration: 0.5, delay: 1.2 }}
+                className={`${isHovered ? "jello" : ""}`}         
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}    
+              >
+                read more
+              </m.span>{" "}
               <FaArrowRight
                 className={`${styles.ArrowRight} ml-4 inline-block `}
               />
@@ -238,7 +243,7 @@ export default function Home() {
               className="ml-auto"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
+              transition={{ duration: 1, delay: 0.5 }}
             >
               <Image
                 src="/Ja3.png"
@@ -246,7 +251,7 @@ export default function Home() {
                 width={0}
                 height={0}
                 sizes="100%"
-                style={{ width: "80%", height: "100vh", objectFit: "contain" }}
+                style={{ width: "100%", height: "100vh", objectFit: "contain" }}
               />
             </m.div>
         </section>
