@@ -32,6 +32,11 @@
   border-top: 1px solid #161616;
 }
 
+.HomePage__title {
+  color: white;
+  mix-blend-mode: difference;
+}
+
 @keyframes one {
   0% {
     left: 0px;

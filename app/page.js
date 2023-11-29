@@ -28,8 +28,6 @@ export default function Home() {
         parseInt(rgb[1]) * 587 +
         parseInt(rgb[2]) * 114) /
       1000;
-
-    // Ustaw kolor tekstu w zależności od jasności tła
     setTextColor(brightness > 128 ? "black" : "white");
   }, []);
 
