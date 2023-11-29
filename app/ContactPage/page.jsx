@@ -28,7 +28,7 @@ const Contact = () => {
                                        left-[-5%]
                                        blur-3xl
                                        z-1`}></div>
-        <div className={`${styles.blob2} absolute bg-gray-600 
+        <div className={`${styles.blob2} absolute md:bg-gray-300 
                                        w-[70rem] h-[55rem]
                                        bg-opacity-50
                                        rounded-full
@@ -69,7 +69,8 @@ const Contact = () => {
 
             <div className="flex mt-4 -mx-1.5 ">
               <Link 
-                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 transition-colors duration-300 transform hover:text-gray-500"
+                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 
+                           transition-colors duration-300 transform hover:text-gray-500"
                 href="#"
               >
                 <svg
@@ -94,7 +95,8 @@ const Contact = () => {
               </Link>
 
               <Link
-                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 transition-colors duration-300 transform hover:text-gray-500"
+                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 
+                           transition-colors duration-300 transform hover:text-gray-500"
                 href="#"
               >
                 <svg
@@ -111,7 +113,8 @@ const Contact = () => {
               </Link>
 
               <Link
-                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 transition-colors duration-300 transform hover:text-gray-500"
+                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 
+                          transition-colors duration-300 transform hover:text-gray-500"
                 href="#"
               >
                 <svg
@@ -137,7 +140,8 @@ const Contact = () => {
           <form className="z-30">
             <div className="-mx-2 md:items-center md:flex">
               <div className="flex-1 px-2">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-sm text-gray-600 
+                                  dark:text-gray-200">
                   Full Name
                 </label>
                 <input
@@ -154,23 +158,38 @@ const Contact = () => {
               </div>
 
               <div className="flex-1 px-2 mt-4 md:mt-0">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-sm 
+                                text-gray-600 dark:text-gray-200">
                   Email address
                 </label>
                 <input
                   type="email"
                   placeholder="johndoe@example.com"
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-gray-400 dark:focus:border-gray-400 focus:ring-gray-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-5 py-3 mt-2
+                   text-gray-700 placeholder-gray-400 
+                   bg-white border border-gray-200 rounded-md 
+                   dark:placeholder-gray-600 dark:bg-gray-900
+                   dark:text-gray-300 dark:border-gray-700 
+                   focus:border-gray-400 dark:focus:border-gray-400 
+                   focus:ring-gray-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
 
             <div className="w-full mt-4">
-              <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+              <label className="block mb-2 text-sm 
+                              text-gray-600 dark:text-gray-200">
                 Message
               </label>
               <textarea
-                className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-gray-400 dark:focus:border-gray-400 focus:ring-gray-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full h-32 px-5 py-3 mt-2 
+                         text-gray-700 placeholder-gray-400 
+                         bg-white border border-gray-200 rounded-md md:h-56 
+                         dark:placeholder-gray-600 dark:bg-gray-900 
+                         dark:text-gray-300 dark:border-gray-700 
+                         focus:border-gray-400 dark:focus:border-gray-400 
+                         focus:ring-gray-400 focus:outline-none focus:ring 
+                         focus:ring-opacity-40"
                 placeholder="Message"
               ></textarea>
             </div>
@@ -180,7 +199,9 @@ const Contact = () => {
             </div>
             <button className="w-full px-6 py-3 mt-4 
                                text-sm font-medium tracking-wide text-white capitalize 
-                               transition-colors duration-300 transform bg-black rounded-md hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-gray-300">
+                               transition-colors duration-300 transform 
+                               bg-black rounded-md hover:bg-white hover:text-black 
+                               focus:outline-none focus:ring focus:ring-gray-300">
               get in touch
             </button>
           </form>

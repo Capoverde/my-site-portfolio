@@ -1,6 +1,5 @@
 .menu {
   display: none;
-  /* background-image: url('../../../public/menuBg.jpg'); */
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
@@ -32,6 +31,7 @@
   transform:skew(-5deg);
   overflow: hidden;
   border: 10px solid #fff;
+  z-index: 90;
   -webkit-box-shadow: 2px 17px 40px -29px rgba(66, 68, 90, 1);
   -moz-box-shadow: 2px 17px 40px -29px rgba(66, 68, 90, 1);
   box-shadow: 2px 17px 40px -29px rgba(66, 68, 90, 1);
