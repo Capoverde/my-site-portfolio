@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Header } from "./components/Header/Header";
+import { Footer } from './components/Footer/Footer';
 import styles from "./Styles/HomePage.module.css";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
@@ -140,6 +141,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

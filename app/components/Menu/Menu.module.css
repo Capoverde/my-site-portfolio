@@ -27,5 +27,6 @@
 }
 
 .blob1{
-  filter: blur(30px)
+  filter: blur(100px);
+  opacity: 0.5;
 }

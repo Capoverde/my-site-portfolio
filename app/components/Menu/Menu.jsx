@@ -31,7 +31,7 @@ export const Menu = ({ isOpen, onClose }) => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        // type: "spring",
         stiffness: 100,
       },
     },
@@ -53,30 +53,53 @@ export const Menu = ({ isOpen, onClose }) => {
     <m.nav
       className={`${styles.menu} ${
         isOpen ? styles.open : ""
-      } menu w-full h-full py-10 mt-16
+      } menu w-screen h-screen py-10 mt-16
                flex justify-center align-center
                bg-gray-200
                absolute
                top-0 left-0
-               z-30
+               z-[999]
              `}
       initial={false}
       animate={isOpen ? "open" : "closed"}
       variants={variants}
     >
-      <div className={`${styles.blob1}
+      {/* <div className={`${styles.blob1}
                      blob absolute
-                     top-5
-                     left-5
-                     w-[10rem]
-                     h-[10rem]
-                     bg-orange-400
+                     bottom-0
+                     left-1/2
+                     w-[50rem]
+                     h-[50rem]
+                     bg-orange-500
                      rounded-full 
-                     z-1
                      `
-      }>
-      </div>
-      <ul className="nav__list uppercase w-full h-screen">
+      }> */}
+      {/* </div> */}
+          <div
+            className={`${styles.blob1} 
+                           bg-red-700 opacity-50
+                           rounded-full
+                           absolute
+                           w-[600px] h-[400px]
+                           left-1/2
+            `}
+          ></div>
+          <div
+            className={`${styles.blob1} 
+                             bg-gray-600 opacity-50
+                             rounded-full absolute
+                             w-[600px] h-[600px]         
+                `}
+          ></div>
+          <div
+            className={`${styles.blob1}  
+                        bg-gray-300 opacity-50 
+                        rounded-full absolute
+                        w-[600px] h-[600px]
+                        right-5
+          `}
+          ></div>
+      <ul className="nav__list uppercase w-full h-screen z-30 absolute">
         <li className={`${styles.nav__listItem} flex justify-center text-[6rem]`}>
           <Link
             className={`${styles.nav__listItemLink} flex justify-between items-center w-full h-full px-32`}

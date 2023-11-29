@@ -1,5 +1,6 @@
 import React from "react";
 import { Header } from "../components/Header/Header";
+import { Footer } from "../components/Footer/Footer";
 import Link from 'next/link'
 import styles from "./ContactPage.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -9,26 +10,55 @@ const Contact = () => {
   return (
     <div className={`${styles.fadeIn}`}>
       <Header />
-      <section className="min-h-screen bg-gray-200 dark:bg-gray-200 lg:flex">
-        <div className="flex flex-col justify-center w-full
+      <section className="min-h-screen bg-gray-200 dark:bg-gray-200 lg:flex relative overflow-hidden">
+        <div className={`${styles.blob2} absolute bg-orange-500 
+                                       w-[50rem] h-[100rem]
+                                       bg-opacity-50
+                                       rounded-full
+                                       top-[50%]
+                                       left-[25%]
+                                       blur-3xl
+                                       z-1`}
+                                       ></div>
+        <div className={`${styles.blob2} absolute bg-gray-400 
+                                       w-[30rem] h-[60rem]
+                                       bg-opacity-50
+                                       rounded-full
+                                       top-[50%]
+                                       left-[-5%]
+                                       blur-3xl
+                                       z-1`}></div>
+        <div className={`${styles.blob2} absolute bg-gray-600 
+                                       w-[70rem] h-[55rem]
+                                       bg-opacity-50
+                                       rounded-full
+                                       top-[-5%]
+                                       right-[-20%]
+                                       blur-3xl
+                                       z-1`}></div>                                       
+        <div className="blob2 absolute"></div>
+        <div className="flex flex-col 
+        //justify-center
+         w-full
                         p-8 lg:px-12 xl:px-32 lg:w-1/2 
                       lg:bg-gray-200 lg:dark:bg-gray-800 ">
-          <h1 className="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
-            hire me.
-          </h1>
-
-          <p className="mt-4 text-gray-500 dark:text-gray-400">
+          <h1 className="title md:text-[7rem] text-[4rem]">Contact</h1>
+          <p className="mt-4 text-gray-500 dark:text-gray-400 z-10">
           Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!<br/>
           Ask me everything and I would love to hear from you.
           </p>
-            <h3 className="my-4">Call me or text me</h3>
-          <div className="flex mt-4 -mx-1 5">
+            <h3 className="my-4 font-medium text-gray-600 dark:text-gray-300">Call me or text me</h3>
+          <div className="flex mt-4 -mx-1.5 flex-col md:flex-row">
             <Link href="#">
-            <FaPhoneAlt className="inline-block text-xl mr-3 text-gray-400 transition-colors duration-300 transform hover:text-blue-500" />
+            <FaPhoneAlt className="inline-block text-xl mr-3 text-gray-400 transition-colors duration-300 transform hover:text-gray-500" />
             +48 503 143 309
             </Link>
-            <Link href="#">
-            <BsEnvelopeAtFill className="inline-block text-xl mx-3 text-gray-400 transition-colors duration-300 transform hover:text-blue-500" />
+            <Link href="#" className="mt-3 md:mt-0">
+            <BsEnvelopeAtFill className="inline-block text-xl
+                                         md:ml-3 mr-3      
+                                       text-gray-400 transition-colors duration-300 transform 
+                                       hover:text-gray-500" 
+                                       />
             slobinski.dev@gmail.com
             </Link>
           </div>
@@ -39,7 +69,7 @@ const Contact = () => {
 
             <div className="flex mt-4 -mx-1.5 ">
               <Link 
-                className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 transition-colors duration-300 transform hover:text-gray-500"
                 href="#"
               >
                 <svg
@@ -64,7 +94,7 @@ const Contact = () => {
               </Link>
 
               <Link
-                className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 transition-colors duration-300 transform hover:text-gray-500"
                 href="#"
               >
                 <svg
@@ -81,7 +111,7 @@ const Contact = () => {
               </Link>
 
               <Link
-                className="mx-1.5 dark:hover:text-blue-400 text-gray-400 transition-colors duration-300 transform hover:text-blue-500"
+                className="mx-1.5 dark:hover:text-gray-400 text-gray-400 transition-colors duration-300 transform hover:text-gray-500"
                 href="#"
               >
                 <svg
@@ -104,7 +134,7 @@ const Contact = () => {
                         flex flex-col justify-center
                       bg-gray-200
                         ">
-          <form>
+          <form className="z-30">
             <div className="-mx-2 md:items-center md:flex">
               <div className="flex-1 px-2">
                 <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
@@ -113,7 +143,13 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="John Doe"
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-5 py-3 mt-2 
+                           text-gray-700 placeholder-gray-400 
+                           bg-white border border-gray-200 rounded-md 
+                           dark:placeholder-gray-600 dark:bg-gray-900 
+                           dark:text-gray-300 dark:border-gray-700 
+                           focus:border-gray-700 dark:focus:border-gary-700 focus:ring-gray-700
+                           focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
 
@@ -124,7 +160,7 @@ const Contact = () => {
                 <input
                   type="email"
                   placeholder="johndoe@example.com"
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-gray-400 dark:focus:border-gray-400 focus:ring-gray-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
@@ -134,11 +170,14 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-gray-400 dark:focus:border-gray-400 focus:ring-gray-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Message"
               ></textarea>
             </div>
-
+            <div className="flex w-full py-3">
+              <input type="checkbox" />
+              <p className="text inline-block ml-3">By sending this message, you agree to the terms and conditions.</p>
+            </div>
             <button className="w-full px-6 py-3 mt-4 
                                text-sm font-medium tracking-wide text-white capitalize 
                                transition-colors duration-300 transform bg-black rounded-md hover:bg-white hover:text-black focus:outline-none focus:ring focus:ring-gray-300">
@@ -147,6 +186,7 @@ const Contact = () => {
           </form>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
