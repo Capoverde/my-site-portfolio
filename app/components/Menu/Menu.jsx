@@ -64,17 +64,17 @@ export const Menu = ({ isOpen, onClose }) => {
       animate={isOpen ? "open" : "closed"}
       variants={variants}
     >
-      {/* <div className={`${styles.blob1}
+      <div className={`${styles.blob1}
                      blob absolute
                      bottom-0
                      left-1/2
                      w-[50rem]
                      h-[50rem]
-                     bg-orange-500
+                     bg-purple-800
                      rounded-full 
                      `
-      }> */}
-      {/* </div> */}
+      }>
+      </div>
           <div
             className={`${styles.blob1} 
                            bg-red-700 opacity-50
@@ -102,12 +102,20 @@ export const Menu = ({ isOpen, onClose }) => {
       <ul className="nav__list uppercase w-full h-screen z-30 absolute">
         <li className={`${styles.nav__listItem} flex justify-center text-[6rem]`}>
           <Link
-            className={`${styles.nav__listItemLink} flex justify-between items-center w-full h-full px-32`}
+            className={`${styles.nav__listItemLink} flex relative justify-between items-center w-full h-full px-32`}
             href="/"
             onClick={handleLinkClick}
           >
             <span className="text-[3rem] font-bold">#01</span>
-            <span>home</span> <GoArrowDownRight />
+            <span className='inline-block'>home</span> <GoArrowDownRight />
+            <div className={`${styles.linkImageBox} absolute right-[20%]`}>
+             <Image 
+              className='linkImage'
+              src='/homeLinkImage.png' 
+              width={200}
+              height={300}
+             />
+            </div>
           </Link>
         </li>
 
@@ -126,7 +134,15 @@ export const Menu = ({ isOpen, onClose }) => {
              onClick={handleLinkClick}
            >
              <span className="text-[3rem] font-bold">#02</span>
-             <span>about</span> <GoArrowDownRight />
+             <span className="inline-block">about</span> <GoArrowDownRight />
+             <div className={`${styles.linkImageBox} absolute right-[20%]`}>
+             <Image 
+              className='linkImage'
+              src='/Ja1.png' 
+              width={200}
+              height={300}
+             />
+            </div>
            </Link>
          </li>
          <li
@@ -143,6 +159,14 @@ export const Menu = ({ isOpen, onClose }) => {
              href="/PortfolioPage"             onClick={handleLinkClick}          
            > 
              <span className="text-[3rem] font-bold">#03</span><span>portfolio</span> <GoArrowDownRight /> 
+             <div className={`${styles.linkImageBox} absolute right-[5%]`}>
+                <Image 
+                 className='linkImage'
+                 src='/portfolioImageLink1.jpg' 
+                 width={300}
+                 height={300}
+                />
+               </div>
                </Link>
           </li>
           <li className={`${styles.nav__listItem}   
@@ -157,6 +181,14 @@ export const Menu = ({ isOpen, onClose }) => {
                   onClick={handleLinkClick}
             >
                <span className="text-[3rem] font-bold">#04</span><span>contact</span> <GoArrowDownRight />
+               <div className={`${styles.linkImageBox} absolute right-[10%]`}>
+                <Image 
+                 className='linkImage'
+                 src='/contactLinkImage.jpg' 
+                 width={300}
+                 height={400}
+                />
+               </div>
             </Link> 
             </li>
           </ul>
