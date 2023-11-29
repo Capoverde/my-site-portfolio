@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion as m } from 'framer-motion';
 import { Header } from "./components/Header/Header";
 import { Footer } from './components/Footer/Footer';
 import styles from "./Styles/HomePage.module.css";
@@ -18,18 +19,6 @@ export default function Home() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
-  useEffect(() => {
-    const container = document.getElementById("mainContainer");
-    const backgroundColor = window.getComputedStyle(container).backgroundColor;
-    const rgb = backgroundColor.match(/\d+/g);
-    const brightness =
-      (parseInt(rgb[0]) * 299 +
-        parseInt(rgb[1]) * 587 +
-        parseInt(rgb[2]) * 114) /
-      1000;
-    setTextColor(brightness > 128 ? "black" : "white");
-  }, []);
 
   return (
     <>
@@ -87,9 +76,7 @@ export default function Home() {
               className={`${styles.HomePage__title}
                            uppercase md:text-[9rem] 
                            headerMain z-10
-                           ${
-                             textColor === "black" ? "text-black" : "text-white"
-                           }`}
+                      `}
             >
               słobiński<span className="text-white">.dev</span>
             </h1>
@@ -120,23 +107,23 @@ export default function Home() {
             </Link>
           </div>
           {/* IMAGE CONTAINER */}
-          <div
+          {/* <div
             className="HomePage__image
                        w-full h-screen
                        relative
                        
           "
-          >
+          > */}
             <Image
-              className="ml-auto bg-black"
+              className="ml-auto"
               src="/Ja3.png"
               alt="Piotr Słobiński"
               width={0}
               height={0}
               sizes="100%"
-              style={{ width: "80%", height: "auto", objectFit: "contain" }}
+              style={{ width: "80%", height: "100vh", objectFit: "contain" }}
             />
-          </div>
+          {/* </div> */}
         </section>
       </main>
       <Footer />
