@@ -1,18 +1,17 @@
-"use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion as m } from "framer-motion";
+import Image from 'next/image';
+import { motion as m, AnimatePresence } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import styles from "./Menu.module.css";
 
 export const Menu = ({ isOpen, onClose }) => {
+
   const variants = {
     open: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
         stiffness: 100,
       },
     },
@@ -26,99 +25,75 @@ export const Menu = ({ isOpen, onClose }) => {
     },
   };
 
+  const listItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: custom * 0.5, // 0.5s delay for each link
+      },
+    }),
+  };
+
   const handleLinkClick = () => {
     onClose();
   };
 
   return (
-    <m.nav
-      className={`${styles.menu} ${
-        isOpen ? styles.open : ""
-      } menu w-full h-full py-10 mt-16
-               flex justify-center align-center
-               bg-gray-200
-               absolute 
-               top-0 left-0 
-               z-30
-             `}
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      variants={variants}
-    >
-      <ul className="nav__list uppercase w-full h-screen">
-        <li
-          className={`${styles.nav__listItem}  
-                            flex justify-center
-                            text-[6rem]
-    `}
+    <AnimatePresence>
+      {isOpen && (
+        <m.nav
+          className={`${styles.menu} ${isOpen ? styles.open : ""} menu w-full h-screen py-10 mt-16
+             flex justify-center align-center
+             bg-gray-200
+             absolute
+             top-0 left-0
+             z-[999]
+           `}
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          variants={variants}
         >
-          <Link
-            className={`${styles.nav__listItemLink} 
-                                flex justify-between items-center
-                                w-full h-full px-32
-                                `}
-            href="/"
-            onClick={handleLinkClick}
-          >
-            <span className="text-[3rem] font-bold">#01</span>
-            <span>home</span> <GoArrowDownRight />
-          </Link>
-        </li>
-        <li
-          className={`${styles.nav__listItem}  
-                    flex justify-center
-                    text-[6rem]
-            `}
-        >
-          <Link
-            className={`${styles.nav__listItemLink}
-                                 flex justify-between items-center
-                                 w-full h-full px-32
-                                 `}
-            href="/AboutPage"
-            onClick={handleLinkClick}
-          >
-            <span className="text-[3rem] font-bold">#02</span>
-            <span>about</span> <GoArrowDownRight />
-          </Link>
-        </li>
-        <li
-          className={`${styles.nav__listItem}  
-                    flex justify-center
-                    text-[6rem]
-            `}
-          >
-          <Link
-            className={`${styles.nav__listItemLink}
-                                     flex justify-between items-center
-                                     w-full h-full px-32
-          `}
-            href="/PortfolioPage"
-            onClick={handleLinkClick}
-          >
-            <span className="text-[3rem] font-bold">#03</span>
-            <span>portfolio</span> <GoArrowDownRight />
-          </Link>
-        </li>
-        <li
-          className={`${styles.nav__listItem}  
-                    flex justify-center
-                    text-[6rem]
-            `}
-        >
-          <Link
-            className={`${styles.nav__listItemLink}
-                      flex justify-between items-center
-                      w-full h-full px-32 
-          `}
-            href="/ContactPage"
-            onClick={handleLinkClick}
-          >
-            <span className="text-[3rem] font-bold">#04</span>
-            <span>contact</span> <GoArrowDownRight />
-          </Link>
-        </li>
-      </ul>
-    </m.nav>
+          <div className={`${styles.blob1} blob absolute bottom-0 left-1/2 w-[50rem] h-[50rem] bg-orange-300 rounded-full`}></div>
+          <div className={`${styles.blob1} bg-red-700 opacity-50 rounded-full absolute w-[600px] h-[400px] left-1/2`}></div>
+          <div className={`${styles.blob1} bg-gray-600 opacity-50 rounded-full absolute w-[600px] h-[600px]`}></div>
+          <div className={`${styles.blob1} bg-gray-300 opacity-50 rounded-full absolute w-[600px] h-[600px] right-5`}></div>
+          <ul className="nav__list uppercase w-full h-screen z-30 absolute ">
+            {['home', 'About', 'Portfolio', 'Contact'].map((page, index) => (
+              <m.li
+                key={index}
+                className={`${styles.nav__listItem} flex justify-center text-[6rem]`}
+                custom={index}
+                variants={listItemVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+              >
+                <Link
+                  href={page === 'home' ? '/' : `/${page}Page`}
+                  passHref
+                    className={`${styles.nav__listItemLink} flex relative justify-between 
+                              items-center w-full h-full px-32`}
+                    onClick={handleLinkClick}
+                  >
+                    <span className="text-[3rem] font-bold">#{String(index + 1).padStart(2, '0')}</span>
+                    <span className='inline-block'>{page}</span> <GoArrowDownRight />
+                    <div className={`${styles.linkImageBox} absolute left-[${page === 'home' ? 5 : 5}%]`}>
+                      <Image
+                        className='linkImage brightness-75'
+                        src={`/${page}LinkImage.png`}
+                        width={300}
+                        height={200}
+                      />
+                    </div>
+                </Link>
+              </m.li>
+            ))}
+          </ul>
+        </m.nav>
+      )}
+    </AnimatePresence>
   );
 };

@@ -1,5 +1,8 @@
 .menu {
   display: none;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
 }
 
 .open {
@@ -11,13 +14,35 @@
 }
 
 .nav__listItemLink {
-  transition: background-color 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
-.nav__listItemLink:hover {
-  background-color: rgb(148,163,184);
+.nav__listItemLink:hover{
+  font-style: italic;
+  transition: all 0.35s ease-in-out;
 }
 
-.LinkImageLabel {
-  
+.nav__listItemLink:hover .linkImageBox{
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.linkImageBox {
+  transition: all 0.35s ease-in-out;
+  transform:skew(-5deg);
+  overflow: hidden;
+  border: 10px solid #fff;
+  z-index: 90;
+  -webkit-box-shadow: 2px 17px 40px -29px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 2px 17px 40px -29px rgba(66, 68, 90, 1);
+  box-shadow: 2px 17px 40px -29px rgba(66, 68, 90, 1);
+  clip-path: polygon(0 100%, 75% 100%, 75% 100%, 0% 100%);
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+.blob1{
+  filter: blur(100px);
+  opacity: 0.5;
 }

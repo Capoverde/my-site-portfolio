@@ -31,3 +31,18 @@
     opacity: 1;
   }
 }
+
+
+.blob2 {
+  animation: blob-rotate 30s infinite;
+}
+
+@keyframes blob-rotate {
+  from {
+    transform: rotateZ(0deg)
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
