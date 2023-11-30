@@ -56,8 +56,8 @@ export const Menu = ({ isOpen, onClose }) => {
           animate={isOpen ? "open" : "closed"}
           variants={variants}
         >
-          <div className={`${styles.blob1} blob absolute bottom-0 left-1/2 w-[50rem] h-[50rem] bg-orange-300 rounded-full`}></div>
-          <div className={`${styles.blob1} bg-red-700 opacity-50 rounded-full absolute w-[600px] h-[400px] left-1/2`}></div>
+          <div className={`${styles.blob1} blob absolute bottom-0 left-1/2 w-[50rem] h-[50rem] bg-gray-700 top-[10%] rounded-full`}></div>
+          <div className={`${styles.blob1} bg-red-700 opacity-50 rounded-full absolute w-[600px] h-[400px] left-1/2 bottom-0`}></div>
           <div className={`${styles.blob1} bg-gray-600 opacity-50 rounded-full absolute w-[600px] h-[600px]`}></div>
           <div className={`${styles.blob1} bg-gray-300 opacity-50 rounded-full absolute w-[600px] h-[600px] right-5`}></div>
           <ul className="nav__list uppercase w-full h-screen z-30 absolute ">
