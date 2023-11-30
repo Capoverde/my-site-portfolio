@@ -1,5 +1,6 @@
 import React from 'react';
 import SkillButton from './SkillButton';
+import { motion as m } from 'framer-motion';
 
 const buttonData = [
   { id:1, text: 'React.js', href: '/AboutPage' },
