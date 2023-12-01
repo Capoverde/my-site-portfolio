@@ -81,7 +81,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              słobiński<span className="text-white">.dev</span>
+              słobiński.dev
             </m.h1>
             <m.p
               className={`${styles.HomePage__describe}

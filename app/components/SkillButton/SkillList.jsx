@@ -64,26 +64,28 @@ const SkillsList = () => {
   useEffect(() => {
     controls.start((i) => ({
       opacity: 1,
-      transition: { delay: i * 0.5 },
+      transition: { delay: i * 0.2 },
     }));
   }, [controls]);
 
   return (
-    <m.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="flex flex-wrap w-full mt-2 pb-4 gap-4 pr-10 z-30"
-    >
+    <div className="flex flex-wrap w-full mt-2 pb-4 gap-4 pr-10 z-30">
       {buttonData.map((button, index) => (
-        <m.div key={button.id} custom={index} animate={controls}>
+        <m.div
+          key={button.id}
+          custom={index}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
+        >
           <SkillButton href={button.href}>
             <span className={`${styles.bntIcon} inline-block`}>{button.icon}</span> {' '}
             <span className="btnText">{button.text}</span>
           </SkillButton>
         </m.div>
       ))}
-    </m.div>
+    </div>
   );
 };
 
