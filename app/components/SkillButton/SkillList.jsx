@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { GrReactjs } from "react-icons/gr";
 import { RiJavascriptLine } from "react-icons/ri"
@@ -69,7 +70,7 @@ const SkillsList = () => {
   }, [controls]);
 
   return (
-    <div className="flex flex-wrap w-full mt-2 pb-4 gap-4 pr-10 z-30">
+    <div className="flex flex-wrap w-full mt-2 pb-4 gap-4 pr-10 z-50">
       {buttonData.map((button, index) => (
         <m.div
           key={button.id}

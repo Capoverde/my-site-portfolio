@@ -89,24 +89,27 @@
   z-index: 1;
 }
 
-.headerMain {
-  mix-blend-mode: difference;
-  font-weight: 700;
-}
-
 .readMoreBtn.jello {
   -webkit-animation: jello-horizontal 0.9s both;
   animation: jello-horizontal 0.9s both;
 }
 
-.resumeLink,
-.portfolioLink {
-  border-top: 1px solid #161616;
+.lineContainer{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.HomePage__title {
-  color: white;
-  mix-blend-mode: difference;
+.profileImage {
+  /* filter: brightness(80%); */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  margin-right: calc((100% - 48px) / 23);
 }
 
 @keyframes one {

@@ -28,7 +28,7 @@ export default function Home() {
         className={`${styles.HomePage} ${styles.FadeIn}
                      min-w-screen min-h-screen
                      relative overflow-hidden
-                     pl-[10%] bg-transparent
+                     px-[10%] bg-transparent
                      bg-black
       `}
       >
@@ -62,20 +62,20 @@ export default function Home() {
           ></div>
         </div>
         <section
-          className="
+          className={`${styles.HomePage__section}
                      flex
-                     h-full w-full z-10
-        "
+                     h-full w-full z-50
+        `}
         >
           <div
             className={`HomePage__describe
-                         w-[40%] h-full flex flex-col
+                         w-[50%] h-full flex flex-col 
           `}
           >
             <m.h1
               className={`${styles.HomePage__title}
                            uppercase md:text-[9rem] 
-                           headerMain z-10
+                           headerMain z-50 text-gray-200
                       `}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -118,7 +118,7 @@ export default function Home() {
             <SkillsList />
           </div>
           <m.div
-            className="ml-auto z-50"
+            className="ml-auto z-30 absolute right-0"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -130,6 +130,7 @@ export default function Home() {
               height={0}
               sizes="100%"
               style={{ width: "100%", height: "100vh", objectFit: "cover"}}
+              className={styles.profileImage}
             />
           </m.div>
         </section>

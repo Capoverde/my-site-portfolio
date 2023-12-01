@@ -14,10 +14,10 @@ export const Header = () => {
         className={`${styles.page__header} 
                       flex justify-between items-center
                       text-gray-300
-                      py-2 px-[10%] bg-transparent`}
+                      px-[10%] bg-transparent`}
       >
         <Link href="/" className="block">
-          <div className="logo-box font-extrabold">DEV</div>
+          <div className="logo-box font-extrabold">DEV.</div>
         </Link>
         <Link href="/ContactPage" className="block">
           <span className="contact inline-block">
@@ -25,7 +25,7 @@ export const Header = () => {
           </span>
         </Link>
         <Hamburger
-          className={`${styles.Hamburger} sticky`}
+          className={`${styles.Hamburger} sticky border-l border-[#3e3e3e]`}
           toggled={isOpen}
           toggle={setOpen}
         />
