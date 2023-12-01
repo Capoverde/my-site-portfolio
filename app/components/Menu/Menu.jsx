@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from 'next/image';
 import { motion as m, AnimatePresence } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareGithub } from "react-icons/fa6";
-import { FaFacebookSquare } from "react-icons/fa";
+import { RiLinkedinLine } from "react-icons/ri";
+import { VscGithubAlt } from "react-icons/vsc";
+import { RiFacebookLine } from "react-icons/ri";
 import styles from "./Menu.module.css";
 
 export const Menu = ({ isOpen, onClose }) => {
@@ -101,20 +101,23 @@ export const Menu = ({ isOpen, onClose }) => {
               <Link
                 href="https://www.linkedin.com/in/piotr-s%C5%82obi%C5%84ski-1b432428b/"
                 target="_blank"
+                title="LinkedIn"
               >
-               <FaLinkedin color="#9ca3af" />
+               <RiLinkedinLine color="#9ca3af" />
               </Link>
               <Link
                 href="https://github.com/Capoverde"
                 target="_blank"
+                title="github.com/Capoverde"
               >
-               <FaSquareGithub color="#9ca3af" />
+               <VscGithubAlt color="#9ca3af" />
               </Link>
               <Link
                 href="https://www.facebook.com/profile.php?id=100092179127170"
                 target="_blank"
+                title="Facebook"
               >
-               <FaFacebookSquare color="#9ca3af" />
+               <RiFacebookLine color="#9ca3af" />
               </Link>
             </div>
             </m.li>
