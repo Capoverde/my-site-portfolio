@@ -35,20 +35,16 @@ export const Menu = ({ isOpen, onClose }) => {
       y: 0,
       transition: {
         duration: 0.5,
-        delay: custom * 0.5, // 0.5s delay for each link
+        delay: custom * 0.5,
       },
     }),
-  };
-
-  const handleLinkClick = () => {
-    onClose();
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
         <m.nav
-          className={`${styles.menu} ${isOpen ? styles.open : ""} menu w-full h-screen py-10 mt-16
+          className={`${styles.menu} ${isOpen ? styles.open : ""} menu w-full h-screen py-10 mt-16 mx-0
              flex justify-center align-center
              bg-black
              absolute
@@ -79,7 +75,6 @@ export const Menu = ({ isOpen, onClose }) => {
                   passHref
                     className={`${styles.nav__listItemLink} flex relative justify-between 
                               items-center w-full h-full px-32`}
-                    onClick={handleLinkClick}
                   >
                     <span className="text-[3rem] font-bold">#{String(index + 1).padStart(2, '0')}</span>
                     <span className='inline-block'>{page}</span> <GoArrowDownRight />
