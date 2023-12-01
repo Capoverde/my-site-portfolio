@@ -28,7 +28,7 @@ export default function Home() {
         className={`${styles.HomePage} ${styles.FadeIn}
                      min-w-screen min-h-screen
                      relative overflow-hidden
-                     pl-[10%] bg-gray-200
+                     pl-[10%] bg-black
       `}
       >
         <div
@@ -42,20 +42,21 @@ export default function Home() {
                            bg-gray-700 opacity-50
                            rounded-full
                            relative
-                           w-[900px] h-[400px]
+                           w-[900px] h-[900px]
             `}
           ></div>
           <div
             className={`${styles.bgShape2} 
-                             bg-red-600 opacity-50
+                             bg-red-600 opacity-70
                              rounded-full relative
-                             w-[600px] h-[600px]         
+                             w-[600px] h-[1200px]         
                 `}
           ></div>
           <div
             className={`${styles.bgShape3}  
-                        bg-white-500 opacity-50
-                        rounded-full relative
+                        bg-blue-100 opacity-50
+                        top-[-90%] left-[-10%]
+                        rounded-full realtive
                         w-[600px] h-[600px]
           `}
           ></div>
@@ -64,7 +65,6 @@ export default function Home() {
           className="
                      flex
                      h-full w-full z-10
-                    
         "
         >
           <div
@@ -85,21 +85,21 @@ export default function Home() {
             </m.h1>
             <m.p
               className={`${styles.HomePage__describe}
-                            text-[2rem]
+                            text-[2rem] text-gray-400
             `}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              Pationate Fullstack web developer
+              Pationate <span className={styles.describeSpan}>&lt;FullStack /&gt;</span> web developer
               <br />
-              Both artistic and engeneering soul {/* <br /> */}
+              Both artistic and engeneering soul <br />
               with a keen eye for details.
             </m.p>
             <Link
               href="/AboutPage"
               className={`readMoreBtn uppercase my-8 
-              font-extrabold text-2xl flex items-center z-30`}
+              font-extrabold text-2xl text-gray-400 flex items-center z-30`}
             >
               <m.span
                 initial={{ y: 20, opacity: 0 }}
@@ -129,7 +129,7 @@ export default function Home() {
               width={0}
               height={0}
               sizes="100%"
-              style={{ width: "100%", height: "100vh", objectFit: "contain" }}
+              style={{ width: "100%", height: "100vh", objectFit: "cover" }}
             />
           </m.div>
         </section>

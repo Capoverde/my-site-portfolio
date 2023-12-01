@@ -50,7 +50,7 @@ export const Menu = ({ isOpen, onClose }) => {
         <m.nav
           className={`${styles.menu} ${isOpen ? styles.open : ""} menu w-full h-screen py-10 mt-16
              flex justify-center align-center
-             bg-gray-200
+             bg-black
              absolute
              top-0 left-0
              z-[999]
@@ -63,7 +63,7 @@ export const Menu = ({ isOpen, onClose }) => {
           <div className={`${styles.blob1} bg-red-700 opacity-50 rounded-full absolute w-[600px] h-[400px] left-1/2 bottom-0`}></div>
           <div className={`${styles.blob1} bg-gray-600 opacity-50 rounded-full absolute w-[600px] h-[600px]`}></div>
           <div className={`${styles.blob1} bg-gray-400 opacity-50 rounded-full absolute w-[600px] h-[600px] right-5`}></div>
-          <ul className="nav__list uppercase w-full h-screen z-30 absolute ">
+          <ul className="nav__list uppercase w-full h-screen text-gray-400 z-30 absolute ">
             {['home', 'About', 'Portfolio', 'Contact'].map((page, index) => (
               <m.li
                 key={index}
@@ -102,19 +102,19 @@ export const Menu = ({ isOpen, onClose }) => {
                 href="https://www.linkedin.com/in/piotr-s%C5%82obi%C5%84ski-1b432428b/"
                 target="_blank"
               >
-               <FaLinkedin color="#161616" />
+               <FaLinkedin color="#9ca3af" />
               </Link>
               <Link
                 href="https://github.com/Capoverde"
                 target="_blank"
               >
-               <FaSquareGithub color="#161616" />
+               <FaSquareGithub color="#9ca3af" />
               </Link>
               <Link
                 href="https://www.facebook.com/profile.php?id=100092179127170"
                 target="_blank"
               >
-               <FaFacebookSquare color="#161616" />
+               <FaFacebookSquare color="#9ca3af" />
               </Link>
             </div>
             </m.li>

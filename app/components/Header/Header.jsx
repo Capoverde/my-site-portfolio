@@ -13,6 +13,7 @@ export const Header = () => {
       <header
         className={`${styles.page__header} 
                       flex justify-between items-center
+                      text-gray-300
                       py-2 px-[10%] bg-transparent`}
       >
         <Link href="/" className="block">
