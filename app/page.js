@@ -118,18 +118,18 @@ export default function Home() {
             <SkillsList />
           </div>
           <m.div
-            className="ml-auto"
+            className="ml-auto z-50"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Image
-              src="/Ja3.png"
+              src="/Ja4.png"
               alt="Piotr Słobiński"
               width={0}
               height={0}
               sizes="100%"
-              style={{ width: "100%", height: "100vh", objectFit: "cover" }}
+              style={{ width: "100%", height: "100vh", objectFit: "cover"}}
             />
           </m.div>
         </section>
