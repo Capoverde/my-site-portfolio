@@ -9,7 +9,7 @@
   display: block;
 }
 
-.nav__listItem {
+.nav__listItem:not(:last-child) {
   border-bottom: 1px solid #161616;
 }
 

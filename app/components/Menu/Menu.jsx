@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from 'next/image';
 import { motion as m, AnimatePresence } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
+import { FaLinkedin } from "react-icons/fa";
+import { FaSquareGithub } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
 import styles from "./Menu.module.css";
 
 export const Menu = ({ isOpen, onClose }) => {
@@ -91,6 +94,30 @@ export const Menu = ({ isOpen, onClose }) => {
                 </Link>
               </m.li>
             ))}
+            <m.li 
+                className={`${styles.nav__listItem} flex justify-center pt-10 text-[6rem] px-32`}
+            >
+            <div className="socials flex gap-10">
+              <Link
+                href="https://www.linkedin.com/in/piotr-s%C5%82obi%C5%84ski-1b432428b/"
+                target="_blank"
+              >
+               <FaLinkedin color="#161616" />
+              </Link>
+              <Link
+                href="https://github.com/Capoverde"
+                target="_blank"
+              >
+               <FaSquareGithub color="#161616" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/profile.php?id=100092179127170"
+                target="_blank"
+              >
+               <FaFacebookSquare color="#161616" />
+              </Link>
+            </div>
+            </m.li>
           </ul>
         </m.nav>
       )}
