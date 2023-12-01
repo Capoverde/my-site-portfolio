@@ -78,7 +78,13 @@
 }
 
 .bgShape3 {
-  animation: three 10s infinite;
+  animation: two 10s infinite;
+  filter: blur(100px);
+  z-index: 1;
+}
+
+.bgShape4 {
+  animation: two 10s infinite;
   filter: blur(100px);
   z-index: 1;
 }

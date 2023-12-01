@@ -28,18 +28,18 @@ export default function Home() {
         className={`${styles.HomePage} ${styles.FadeIn}
                      min-w-screen min-h-screen
                      relative overflow-hidden
-                     pl-[10%] bg-black
+                     pl-[10%] bg-transparent
+                     bg-black
       `}
       >
         <div
           className="absolute inset-0 
                      inline-flex flex-row justify-center 
-                     top-1/2
-                     "
+                     top-1/2"
         >
           <div
             className={`${styles.bgShape1} 
-                           bg-gray-700 opacity-50
+                           bg-black-700 opacity-30
                            rounded-full
                            relative
                            w-[900px] h-[900px]
