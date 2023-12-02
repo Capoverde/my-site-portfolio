@@ -6,4 +6,12 @@
 body {
     background-color: #161616 !important;
     /* background: linear-gradient(290deg, rgba(0, 0, 0, 0.93) 11.2%, hsl(0, 0%, 12%) 10.9%); */
+    /* background: linear-gradient(109.6deg, rgb(19, 53, 42) 11.2%, rgb(14, 14, 14) 91.3%); */
 }
+
+.fadeIn {
+    position: absolute;
+    overflow: hidden;
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }

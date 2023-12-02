@@ -10,26 +10,32 @@ export const Header = () => {
 
   return (
     <>
-      <header
-        className={`${styles.page__header} 
-                      flex justify-between items-center
-                      text-gray-300
-                      px-[10%] bg-transparent`}
+      <header className="
+                  flex justify-between items-center
+                  text-gray-300 border-b border-[#3e3e3e]
+                  px-[10%] overflow-hidden"
       >
-        <Link href="/" className="block">
-          <div className="logo-box font-extrabold">DEV.</div>
-        </Link>
-        <Link href="/ContactPage" className="block">
-          <span className="contact inline-block">
-            cont<strong>@</strong>ct
-          </span>
-        </Link>
-        <Hamburger
-          className={`${styles.Hamburger} sticky border-l border-[#3e3e3e]`}
-          toggled={isOpen}
-          toggle={setOpen}
-        />
-      </header>
+  <div
+    className={`${styles.logoBox} flex justify-center items-center h-[50px] border-l border-r border-[#3e3e3e] w-[10%]`}
+  >
+    <Link href="/" className="block">
+      <span className="font-extrabold ">DEV.</span>
+    </Link>
+  </div>
+  <Link href="/ContactPage" className="block">
+    <span className="contact inline-block">
+      cont<strong>@</strong>ct
+    </span>
+  </Link>
+  <div className="hamburgerBox h-full border-r border-l border-[#3e3e3e] flex justify-center w-[10%]">
+    <Hamburger
+      className={`${styles.Hamburger}  sticky `}
+      toggled={isOpen}
+      toggle={setOpen}
+    />
+  </div>
+</header>
+
       <Menu isOpen={isOpen} />
     </>
   );

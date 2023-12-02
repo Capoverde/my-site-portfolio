@@ -48,7 +48,8 @@ export const Menu = ({ isOpen, onClose }) => {
              flex justify-center align-center
              bg-black
              absolute
-             top-0 left-0
+             overflow-x-hidden
+             md:top-[-1.4%] 
              z-[999]
            `}
           initial={false}

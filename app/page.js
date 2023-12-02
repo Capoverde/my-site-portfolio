@@ -32,6 +32,14 @@ export default function Home() {
                      bg-black
       `}
       >
+          <div
+            className={`${styles.bgShape1} 
+                           bg-gray-300 opacity-30
+                           rounded-full
+                           absolute top-[-22%] left-[-10%]
+                           w-[400px] h-[400px]
+            `}
+          ></div>
         <div
           className="absolute inset-0 
                      inline-flex flex-row justify-center 
@@ -63,29 +71,32 @@ export default function Home() {
         </div>
         <section
           className={`${styles.HomePage__section}
-                     flex
+                    //flex
                      h-full w-full z-50
+                     border-l border-r border-[#3e3e3e]
         `}
         >
-          <div
-            className={`HomePage__describe
-                         w-[50%] h-full flex flex-col 
-          `}
-          >
             <m.h1
               className={`${styles.HomePage__title}
                            uppercase md:text-[9rem] 
                            headerMain z-50 text-gray-200
+                           border-b border-[#3e3e3e] pl-3
                       `}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               słobiński.dev
-            </m.h1>
+            </m.h1>          
+          <div
+            className={`HomePage__describe
+                         w-[50%] h-full flex flex-col 
+          `}
+          >
             <m.p
               className={`${styles.HomePage__describe}
                             text-[2rem] text-gray-400
+                            pl-3 border-b border-r border-[#3e3e3e]
             `}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -99,7 +110,9 @@ export default function Home() {
             <Link
               href="/AboutPage"
               className={`readMoreBtn uppercase my-8 
-              font-extrabold text-2xl text-gray-400 flex items-center z-30`}
+              font-extrabold text-2xl text-gray-400 flex items-center z-30
+              pl-3
+              `}
             >
               <m.span
                 initial={{ y: 20, opacity: 0 }}
@@ -118,7 +131,7 @@ export default function Home() {
             <SkillsList />
           </div>
           <m.div
-            className="ml-auto z-30 absolute right-0"
+            className="ml-auto z-[30] absolute top-0 right-0 "
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}

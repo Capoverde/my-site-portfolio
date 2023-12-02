@@ -1,10 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Antonio:100,200,300,regular,500,600,700);
 
-.fadeIn {
-  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-
 .describeSpan {
   background-clip: text;
   -webkit-background-clip: text;
@@ -66,7 +61,7 @@
 }
 
 .bgShape1 {
-  animation: one 10s infinite;
+  /* animation: one 10s infinite; */
   filter: blur(100px);
   z-index: 1;
 }

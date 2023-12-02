@@ -70,7 +70,9 @@ const SkillsList = () => {
   }, [controls]);
 
   return (
-    <div className="flex flex-wrap w-full mt-2 pb-4 gap-4 pr-10 z-50">
+    <div className="flex flex-wrap w-full mt-2 pb-4 pt-6 pl-3 gap-4 pr-10 z-50 
+                    border-t border-r border-[#3e3e3e]
+    ">
       {buttonData.map((button, index) => (
         <m.div
           key={button.id}
