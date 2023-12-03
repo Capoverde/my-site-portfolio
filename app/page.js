@@ -4,10 +4,13 @@ import Image from "next/image";
 import { motion as m } from "framer-motion";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
+import { NavLinks } from "./components/NavLinks/NavLinks";
 import SkillsList from "./components/SkillButton/SkillList";
 import styles from "./Styles/HomePage.module.css";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import { GoArrowDownRight } from "react-icons/go";
+import checkArrow from "../public/checkArrow.svg";
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -63,7 +66,7 @@ export default function Home() {
           ></div>
           <div
             className={`${styles.bgShape3}  
-                        bg-red-600
+                        //bg-red-600
                          opacity-50
                         top-[-90%] left-[-10%]
                         rounded-full realtive
@@ -110,8 +113,9 @@ export default function Home() {
             </m.p>
             <Link
               href="/AboutPage"
-              className={`readMoreBtn uppercase my-8 
+              className={`readMoreBtn uppercase py-8
               font-extrabold text-2xl text-gray-400 flex items-center z-30
+              border-b border-[#3e3e3e] 
               pl-3
               `}
             >
@@ -129,8 +133,10 @@ export default function Home() {
                 className={`${styles.ArrowRight} ml-4 inline-block `}
               />
             </Link>
-            <SkillsList />
-          </div>
+            <NavLinks href="/PortfolioPage" number="01" title="Skills" />
+            <NavLinks href="/" number="02" title="Resume" />
+            <NavLinks href="/" number="03" title="Portfolio" />
+          </div>  
           <m.div
             className="ml-auto z-[30] absolute top-0 right-0 "
             initial={{ y: 20, opacity: 0 }}
