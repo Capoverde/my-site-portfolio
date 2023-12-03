@@ -133,9 +133,28 @@ export default function Home() {
                 className={`${styles.ArrowRight} ml-4 inline-block `}
               />
             </Link>
-            <NavLinks href="/PortfolioPage" number="01" title="Skills" />
-            <NavLinks href="/" number="02" title="Resume" />
-            <NavLinks href="/" number="03" title="Portfolio" />
+            <h2 className="title text-gray-400 text-[4rem] pl-3 w-full border-r border-[#3e3e3e]">%</h2>
+            <m.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
+            >
+             <NavLinks href="/AboutPage" number="01" title="Skills" />
+            </m.div>
+            <m.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 2 }}
+            >
+             <NavLinks href="/" number="02" title="Resume" />
+            </m.div>
+            <m.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 3 }}
+            >
+             <NavLinks href="/" number="03" title="Portfolio" />
+            </m.div>
           </div>  
           <m.div
             className="ml-auto z-[30] absolute top-0 right-0 "
