@@ -5,10 +5,9 @@ import { motion as m } from "framer-motion";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { NavLinks } from "./components/NavLinks/NavLinks";
-import SkillsList from "./components/SkillButton/SkillList";
 import styles from "./Styles/HomePage.module.css";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
+import { BsArrowRight } from "react-icons/bs";
 import { GoArrowDownRight } from "react-icons/go";
 import checkArrow from "../public/checkArrow.svg";
 
@@ -90,7 +89,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              słobiński.dev
+              słobiński.<span classname='stroke stroke-[#3e3e3e] text-transparent'>dev</span>
             </m.h1>          
           <div
             className={`HomePage__describe
@@ -129,11 +128,13 @@ export default function Home() {
               >
                 read more
               </m.span>{" "}
-              <FaArrowRight
-                className={`${styles.ArrowRight} ml-4 inline-block `}
+              <BsArrowRight
+                className={`${styles.ArrowRight} ml-4 inline-block`}
               />
             </Link>
-            <h2 className="title text-gray-400 text-[4rem] pl-3 w-full border-r border-[#3e3e3e]">%</h2>
+            <h2 className="title text-gray-400 text-[4rem] pl-3 w-full border-r border-[#3e3e3e]"><span className="opacity-[50%]">%</span>
+            <span className="opacity-[50%]"></span>
+            </h2>
             <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -163,7 +164,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Image
-              src="/Ja4.png"
+              src="/Ja5.webp"
               alt="Piotr Słobiński"
               width={0}
               height={0}

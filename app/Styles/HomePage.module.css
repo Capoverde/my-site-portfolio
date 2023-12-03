@@ -96,7 +96,7 @@
 }
 
 .profileImage {
-  /* filter: brightness(80%); */
+  filter: brightness(80%);
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
 }
 
