@@ -28,7 +28,8 @@ const Contact = () => {
                                        left-[-5%]
                                        blur-3xl
                                        z-1`}></div>
-        <div className={`${styles.blob2} absolute md:bg-gray-300 
+        <div className={`${styles.blob2} absolute 
+        //md:bg-[#121212]
                                        w-[70rem] h-[55rem]
                                        bg-opacity-50
                                        rounded-full
@@ -37,18 +38,24 @@ const Contact = () => {
                                        blur-3xl
                                        z-1`}></div>                                       
         <div className="blob2 absolute"></div>
-        <div className="flex flex-col 
-        //justify-center
-         w-full
-                        p-8 lg:px-12 xl:px-32 lg:w-1/2 
-                      lg:bg-gray-200 lg:dark:bg-gray-800 ">
-          <h1 className="title md:text-[7rem] text-[4rem]">Contact</h1>
-          <p className="mt-4 text-gray-500 dark:text-gray-400 z-10">
+        <div className="flex flex-col
+                        xl:pl-[10%] xl:w-1/2 
+                       lg:dark:bg-black
+                        border-l border-[#3e3e3e]
+                       ">
+          <h1 className="title md:text-[7rem] text-[4rem] text-gray-400
+                         border-b border-l border-[#3e3e3e] w-full 
+          ">Contact</h1>
+          <p className="mt-4 text-gray-500 dark:text-gray-400 z-10 
+                         border-b border-l  border-[#3e3e3e] xl:pb-6
+          ">
           Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!<br/>
           Ask me everything and I would love to hear from you.
           </p>
-            <h3 className="my-4 font-medium text-gray-600 dark:text-gray-300">Call me or text me</h3>
-          <div className="flex mt-4 -mx-1.5 flex-col md:flex-row">
+            <h3 className="border-l border-[#3e3e3e] my-4 font-medium text-gray-600 dark:text-gray-300">Call me or text me</h3>
+          <div className="text-gray-400 flex mt-4 -mx-1.5 flex-col md:flex-row
+                           border-b border-l border-[#3e3e3e] xl:pb-6
+          ">
             <Link href="#">
             <FaPhoneAlt className="inline-block text-xl mr-3 text-gray-400 transition-colors duration-300 transform hover:text-gray-500" />
             +48 503 143 309
@@ -62,7 +69,7 @@ const Contact = () => {
             slobinski.dev@gmail.com
             </Link>
           </div>
-          <div className="mt-6 md:mt-8">
+          <div className="mt-6 md:mt-8 border-b border-[#3e3e3e] xl:pb-6">
             <h3 className="font-medium text-gray-600 dark:text-gray-300 ">
               Follow me
             </h3>
@@ -133,9 +140,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="w-full p-8 pt-0 lg:w-1/2 lg:px-12 xl:px-24 
-                        flex flex-col justify-center
-                      bg-gray-200
+        <div className="w-full p-8 pt-0 lg:w-1/2 xl:w-1/2 lg:px-12 xl:px-24
+                        flex flex-col justify-center grow
+                        border-l border-[#3e3e3e]
+                      bg-black
                         ">
           <form className="z-30">
             <div className="-mx-2 md:items-center md:flex">
@@ -149,10 +157,11 @@ const Contact = () => {
                   placeholder="John Doe"
                   className="block w-full px-5 py-3 mt-2 
                            text-gray-700 placeholder-gray-400 
-                           bg-white border border-gray-200 rounded-md 
-                           dark:placeholder-gray-600 dark:bg-gray-900 
+                           bg-black border border-gray-200 rounded-md 
+                           dark:placeholder-gray-600 dark:bg-black
                            dark:text-gray-300 dark:border-gray-700 
-                           focus:border-gray-700 dark:focus:border-gary-700 focus:ring-gray-700
+                           focus:border-gray-700 dark:focus:border-gary-700 
+                           focus:ring-gray-700
                            focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
@@ -168,7 +177,7 @@ const Contact = () => {
                   className="block w-full px-5 py-3 mt-2
                    text-gray-700 placeholder-gray-400 
                    bg-white border border-gray-200 rounded-md 
-                   dark:placeholder-gray-600 dark:bg-gray-900
+                   dark:placeholder-gray-600 dark:bg-black
                    dark:text-gray-300 dark:border-gray-700 
                    focus:border-gray-400 dark:focus:border-gray-400 
                    focus:ring-gray-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -185,7 +194,7 @@ const Contact = () => {
                 className="block w-full h-32 px-5 py-3 mt-2 
                          text-gray-700 placeholder-gray-400 
                          bg-white border border-gray-200 rounded-md md:h-56 
-                         dark:placeholder-gray-600 dark:bg-gray-900 
+                         dark:placeholder-gray-600 dark:bg-black
                          dark:text-gray-300 dark:border-gray-700 
                          focus:border-gray-400 dark:focus:border-gray-400 
                          focus:ring-gray-400 focus:outline-none focus:ring 
@@ -195,7 +204,7 @@ const Contact = () => {
             </div>
             <div className="flex w-full py-3">
               <input type="checkbox" />
-              <p className="text inline-block ml-3">By sending this message, you agree to the terms and conditions.</p>
+              <p className="text inline-block ml-3 text-gray-600">By sending this message, you agree to the terms and conditions.</p>
             </div>
             <button className="w-full px-6 py-3 mt-4 
                                text-sm font-medium tracking-wide text-white capitalize 

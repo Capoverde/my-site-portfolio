@@ -29,7 +29,7 @@ export default function Home() {
                      min-w-screen min-h-screen
                      relative overflow-hidden
                      px-[10%] bg-transparent
-                     bg-black
+                     bg-gray-600
       `}
       >
           <div
@@ -55,14 +55,16 @@ export default function Home() {
           ></div>
           <div
             className={`${styles.bgShape2} 
-                             bg-red-600 opacity-70
+                            //bg-orange-600 
+                             opacity-70
                              rounded-full relative
                              w-[600px] h-[1200px]         
                 `}
           ></div>
           <div
             className={`${styles.bgShape3}  
-                        bg-blue-100 opacity-50
+                        bg-red-600
+                         opacity-50
                         top-[-90%] left-[-10%]
                         rounded-full realtive
                         w-[600px] h-[600px]
@@ -71,7 +73,6 @@ export default function Home() {
         </div>
         <section
           className={`${styles.HomePage__section}
-                    //flex
                      h-full w-full z-50
                      border-l border-r border-[#3e3e3e]
         `}
@@ -143,7 +144,7 @@ export default function Home() {
               height={0}
               sizes="100%"
               style={{ width: "100%", height: "100vh", objectFit: "cover"}}
-              className={styles.profileImage}
+              className={`${styles.profileImage} `}
             />
           </m.div>
         </section>
