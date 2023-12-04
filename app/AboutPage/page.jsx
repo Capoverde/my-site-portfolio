@@ -49,7 +49,7 @@ export default function About () {
         Click the button to learn more about technology
       </h2>
        <SkillList />
-       <p className='text-gray-500 px-6 mt-auto'>
+       <p className='text-gray-500 px-6 mt-auto columns-2'>
          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias explicabo laudantium modi esse, distinctio delectus! Sapiente amet pariatur ab exercitationem repudiandae suscipit molestias? Voluptatum, facere? Esse distinctio optio necessitatibus pariatur animi odio temporibus recusandae facere nisi architecto ut repellendus hic accusamus officia commodi exercitationem cum nesciunt asperiores, mollitia debitis veritatis.
        </p>
      </div>
