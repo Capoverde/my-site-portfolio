@@ -9,7 +9,8 @@ import styles from "./Styles/HomePage.module.css";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { GoArrowDownRight } from "react-icons/go";
-import checkArrow from "../public/checkArrow.svg";
+import { MdSubdirectoryArrowLeft } from "react-icons/md"
+
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
@@ -132,29 +133,37 @@ export default function Home() {
                 className={`${styles.ArrowRight} ml-4 inline-block`}
               />
             </Link>
-            <h2 className="title text-gray-400 text-[4rem] pl-3 w-full border-r border-[#3e3e3e]"><span className="opacity-[50%]">%</span>
-            <span className="opacity-[50%]"></span>
+            <h2 className="title text-gray-400 text-[4rem] pl-3 w-full border-r border-[#3e3e3e]">
+            <div className="flex h-full w-full justify-between align-center">
+             <span className="opacity-[50%]">%</span>
+             <span className="opacity-[50%]">
+              <MdSubdirectoryArrowLeft className="rotate-[-90deg]" />
+             </span>
+            </div>  
             </h2>
             <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 1 }}
+              className=" z-[50]"
             >
-             <NavLinks href="/AboutPage" number="01" title="Skills" />
+             <NavLinks href="/AboutPage" number="01" title="Skills" className="text-gray-400 " />
             </m.div>
             <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 2 }}
+              className=" z-[50]"
             >
-             <NavLinks href="/" number="02" title="Resume" />
+             <NavLinks href="/" number="02" title="Resume" className="text-gray-500"/>
             </m.div>
             <m.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 3 }}
+              className=" z-[50]"
             >
-             <NavLinks href="/" number="03" title="Portfolio" />
+             <NavLinks href="/" number="03" title="Portfolio" className="text-gray-600" />
             </m.div>
           </div>  
           <m.div

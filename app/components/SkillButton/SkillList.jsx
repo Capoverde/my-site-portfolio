@@ -1,4 +1,4 @@
-
+"use client"
 import React, { useEffect } from 'react';
 import { GrReactjs } from "react-icons/gr";
 import { RiJavascriptLine } from "react-icons/ri"
@@ -59,7 +59,7 @@ const buttonData = [
   { id:26, text: 'TypeScript', href: '/AboutPage', icon: <TbBrandTypescript color={iconColor} /> },
 ];
 
-const SkillsList = () => {
+ const SkillsList = () => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const SkillsList = () => {
 
   return (
     <div className="flex flex-wrap w-full mt-2 pb-4 pt-6 pl-3 gap-4 pr-10 z-50 
-                    border-t border-r border-[#3e3e3e]
+                    border-r border-[#3e3e3e]
     ">
       {buttonData.map((button, index) => (
         <m.div
