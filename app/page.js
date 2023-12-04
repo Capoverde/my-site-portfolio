@@ -58,7 +58,7 @@ export default function Home() {
           ></div>
           <div
             className={`${styles.bgShape2} 
-                            bg-red-600 
+                            //bg-red-600 
                              opacity-70
                              rounded-full relative
                              w-[600px] h-[1200px]         
@@ -163,7 +163,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 3 }}
               className=" z-[50]"
             >
-             <NavLinks href="/" number="03" title="Portfolio" className="text-gray-600" />
+             <NavLinks href="/" number="03" title="Portfolio" className="text-gray-600 border-b border-[#3e3e3e]" />
             </m.div>
           </div>  
           <m.div
@@ -173,7 +173,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Image
-              src="/Ja5.webp"
+              src="/Ja4.png"
               alt="Piotr Słobiński"
               width={0}
               height={0}

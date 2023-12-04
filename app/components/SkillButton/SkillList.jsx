@@ -25,6 +25,7 @@ import { BiLogoJquery } from "react-icons/bi";
 import { TbBrandAdobe } from "react-icons/tb";
 import { RiBootstrapLine } from "react-icons/ri";
 import { TbBrandTypescript } from "react-icons/tb";
+import { DiPhotoshop } from "react-icons/di";
 import SkillButton from './SkillButton';
 import { motion as m, useAnimation } from 'framer-motion';
 import styles from './SkillButton.module.css';
@@ -57,6 +58,7 @@ const buttonData = [
   { id:24, text: 'AdobeXD', href: '/AboutPage', icon: <TbBrandAdobe color={iconColor} /> },
   { id:25, text: 'Bootstrap', href: '/AboutPage', icon: <RiBootstrapLine color={iconColor} /> },
   { id:26, text: 'TypeScript', href: '/AboutPage', icon: <TbBrandTypescript color={iconColor} /> },
+  { id:27, text: 'PhotoShop', href: '/AboutPage', icon: <DiPhotoshop color={iconColor} /> },
 ];
 
  const SkillsList = () => {
@@ -70,7 +72,7 @@ const buttonData = [
   }, [controls]);
 
   return (
-    <div className="flex flex-wrap w-full mt-2 pb-4 pt-6 pl-3 gap-4 pr-10 z-50 
+    <div className="flex align-center flex-wrap w-full mt-2 px-6 py-6 gap-4 z-50 
                     border-r border-[#3e3e3e]
     ">
       {buttonData.map((button, index) => (
@@ -83,7 +85,7 @@ const buttonData = [
           transition={{ duration: 0.5, delay: index * 0.2 }}
         >
           <SkillButton href={button.href}>
-            <span className={`${styles.bntIcon} inline-block`}>{button.icon}</span> {' '}
+            <span className={`${styles.btnIcon} inline-block`}>{button.icon}</span> {' '}
             <span className="btnText">{button.text}</span>
           </SkillButton>
         </m.div>

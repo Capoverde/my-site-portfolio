@@ -3,6 +3,8 @@ import React from 'react'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import SkillList from '../components/SkillButton/SkillList'
+import Image from 'next/image'
+import Link from 'next/link'
 import styles from './About.module.css'
 
 export default function About () {
@@ -13,9 +15,38 @@ export default function About () {
                             border-r border-l border-[#3e3e3e] relative
     `}>
      <h1 className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]">About Me</h1>
-     <div className="wrapper w-full h-full flex justify-between">
-      <SkillList />
-      <div className="w-full h-full border-l border-[#3e3e3e]"></div>
+     <div className="wrapper w-full h-1/2 flex justify-between ">
+      <div className="flex-col pb-14 overflow-hidden">
+       <p className="text-gray-400 px-6 py-6 h-full">
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem perspiciatis amet laboriosam magnam aliquam, veniam dolorem voluptates minima quasi unde?
+       </p>
+         <div className="flex justify-end">
+         <Link className=' text-gray-100 mr-6 mb-6  border border-[#3e3e3e] px-8 py-2 rounded-3xl '
+         href='/PortfolioPage'
+        >
+          <span>Portfolio</span>
+        </Link>
+         </div>
+      </div>
+      <div className="w-full h-full border-l border-[#3e3e3e]
+                      flex items-center justify-center
+                      overflow-hidden
+      ">
+        <Image
+         src='/Ja5.webp'
+         width={300}
+         height={300}
+        />
+      </div>
+     </div>
+     <div className="w-full h-full border-t border-[#3e3e3e] flex-col">
+      <h2 className="text-2xl text-gray-400 px-6 pt-6">
+        Click the button to learn more about technology
+      </h2>
+       <SkillList />
+       <p className='text-gray-500 px-6 mt-auto'>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore optio minus animi corrupti fugiat similique necessitatibus eligendi ab dignissimos, non illum, incidunt iste assumenda voluptatibus numquam ex dolores quidem repellendus?
+       </p>
      </div>
     </main>
     <Footer />
