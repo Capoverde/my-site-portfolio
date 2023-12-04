@@ -16,9 +16,9 @@ export default function About () {
     `}>
      <h1 className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]">About Me</h1>
      <div className="wrapper w-full h-1/2 flex justify-between ">
-      <div className="flex-col pb-14 overflow-hidden">
+      <div className="flex-col pb-14 overflow-hidden w-1/2">
        <p className="text-gray-400 px-6 py-6 h-full">
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem perspiciatis amet laboriosam magnam aliquam, veniam dolorem voluptates minima quasi unde?
+       A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications.
        </p>
          <div className="flex justify-end">
          <Link className=' text-gray-100 mr-6 mb-6  border border-[#3e3e3e] px-8 py-2 rounded-3xl '
@@ -28,15 +28,20 @@ export default function About () {
         </Link>
          </div>
       </div>
-      <div className="w-full h-full border-l border-[#3e3e3e]
+      <div className="h-full border-l border-[#3e3e3e]
                       flex items-center justify-center
-                      overflow-hidden
+                      overflow-hidden relative w-1/2
       ">
+        <div className={`${styles.imageBox} z-[10] w-[120px] h-[120px] 
+                       top-[50%] left-[50%]
+                       absolute rounded-full`}>
+        </div>
         <Image
-         src='/Ja5.webp'
-         width={300}
-         height={300}
-        />
+          className='z-[30]'
+          src='/Ja5.webp'
+          width={300}
+          height={300}
+         />
       </div>
      </div>
      <div className="w-full h-full border-t border-[#3e3e3e] flex-col">
@@ -45,7 +50,7 @@ export default function About () {
       </h2>
        <SkillList />
        <p className='text-gray-500 px-6 mt-auto'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore optio minus animi corrupti fugiat similique necessitatibus eligendi ab dignissimos, non illum, incidunt iste assumenda voluptatibus numquam ex dolores quidem repellendus?
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias explicabo laudantium modi esse, distinctio delectus! Sapiente amet pariatur ab exercitationem repudiandae suscipit molestias? Voluptatum, facere? Esse distinctio optio necessitatibus pariatur animi odio temporibus recusandae facere nisi architecto ut repellendus hic accusamus officia commodi exercitationem cum nesciunt asperiores, mollitia debitis veritatis.
        </p>
      </div>
     </main>

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Rotate as Hamburger } from "hamburger-react";
 import styles from "./Header.module.css";
 import { Menu } from "../Menu/Menu";
+import { VscGithubAlt } from "react-icons/vsc";
+import { RiFacebookLine } from "react-icons/ri";
 
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -22,10 +24,22 @@ export const Header = () => {
       <span className="font-extrabold ">DEV.</span>
     </Link>
   </div>
-  <Link href="/ContactPage" className="block">
+  <Link href='https://github.com/Capoverde'
+        title='GitHub'
+        about="_blank" 
+        className="flex justify-center items-center h-[50px] border-r border-[#3e3e3e] w-[4%] z=[30]">
+    <VscGithubAlt />
+  </Link>
+  <Link href="/ContactPage" className="grow self-center flex justify-center">
     <span className="contact inline-block">
       cont<strong>@</strong>ct
     </span>
+  </Link>
+  <Link href='https://www.facebook.com/profile.php?id=100092179127170'
+        title='Facebook'
+        about="_blank" 
+        className="flex justify-center items-center h-[50px] border-l border-[#3e3e3e] w-[4%] z-[30]">
+    <RiFacebookLine />
   </Link>
   <div className="hamburgerBox h-full border-r border-l border-[#3e3e3e] flex justify-center w-[10%]">
     <Hamburger
