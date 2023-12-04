@@ -10,8 +10,8 @@ export const Footer = () => {
                      bg-black text-gray-600"
     >
 
-        <span className="inline-block ml-auto">Copy Right &copy; {year} </span>
-        <Link className="inline-block mr-[10%]" href="/">
+        <span className="inline-block ml-auto">Copy Right <sup>&copy;</sup>  {year} </span>
+        <Link className="inline-block ml-4 mr-[11%]" href="/">
           Slobinski.dev
         </Link>
       
