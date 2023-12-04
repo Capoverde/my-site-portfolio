@@ -9,15 +9,12 @@ export const Footer = () => {
       className="w-full py-3 flex flex-end
                      bg-black text-gray-600"
     >
-      <div
-        className="md:w-1/2 md:flex-row  md:ml-auto md:justify-between md:pr-6
-                      w-full flex flex-col items-center"
-      >
-        <span className="inline-block">Copy Right &copy; {year} </span>
-        <Link className="inline-block" href="/">
+
+        <span className="inline-block ml-auto">Copy Right &copy; {year} </span>
+        <Link className="inline-block mr-[10%]" href="/">
           Slobinski.dev
         </Link>
-      </div>
+      
     </footer>
   );
 };
