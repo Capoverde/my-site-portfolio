@@ -58,7 +58,7 @@ export default function Home() {
           ></div>
           <div
             className={`${styles.bgShape2} 
-                            //bg-orange-600 
+                            bg-red-600 
                              opacity-70
                              rounded-full relative
                              w-[600px] h-[1200px]         
@@ -66,7 +66,7 @@ export default function Home() {
           ></div>
           <div
             className={`${styles.bgShape3}  
-                        //bg-red-600
+                        bg-purple-600
                          opacity-50
                         top-[-90%] left-[-10%]
                         rounded-full realtive
