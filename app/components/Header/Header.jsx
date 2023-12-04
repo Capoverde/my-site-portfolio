@@ -26,7 +26,7 @@ export const Header = () => {
   </div>
   <Link href='https://github.com/Capoverde'
         title='GitHub'
-        about="_blank" 
+        target="_blank" 
         className="flex justify-center items-center h-[50px] border-r border-[#3e3e3e] w-[4%] z=[30]">
     <VscGithubAlt />
   </Link>
@@ -37,7 +37,7 @@ export const Header = () => {
   </Link>
   <Link href='https://www.facebook.com/profile.php?id=100092179127170'
         title='Facebook'
-        about="_blank" 
+        target="_blank" 
         className="flex justify-center items-center h-[50px] border-l border-[#3e3e3e] w-[4%] z-[30]">
     <RiFacebookLine />
   </Link>
