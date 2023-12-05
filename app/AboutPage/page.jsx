@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import SkillList from '../components/SkillButton/SkillList'
@@ -21,7 +21,7 @@ export default function About () {
        A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications.
        </p>
          <div className="flex justify-end">
-         <Link className=' text-gray-100 mr-6 mb-6  border border-[#3e3e3e] px-8 py-2 rounded-3xl '
+         <Link className=' text-gray-100 mx-6 mb-6  border border-[#3e3e3e] px-8 py-2 rounded-3xl '
          href='/PortfolioPage'
         >
           <span>Portfolio</span>
