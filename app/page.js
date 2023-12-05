@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 import { Header } from "./components/Header/Header";
@@ -21,6 +22,16 @@ export default function Home() {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+  };
+
+  const downloadPdf = () => {
+    const router = useRouter();
+    const pdfUrl = `${router.basePath}/assets/resume.pdf`;
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'resume.pdf';
+    link.click();
+    alert('resume click')
   };
 
   return (
@@ -90,7 +101,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              słobiński.<span classname='stroke stroke-[#3e3e3e] text-transparent'>dev</span>
+              słobiński.dev
             </m.h1>          
           <div
             className={`HomePage__describe
@@ -155,7 +166,12 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 2 }}
               className=" z-[50]"
             >
-             <NavLinks href="/" number="02" title="Resume" className="text-gray-500"/>
+             <NavLinks href="/"
+                       number="02" 
+                       title="Resume" 
+                       className="text-gray-500"
+                       onClick={downloadPdf} 
+                       />
             </m.div>
             <m.div
               initial={{ y: 20, opacity: 0 }}
