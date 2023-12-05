@@ -8,11 +8,11 @@ const SkillButton = ({ href, children }) => (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className={`${styles.skillBtn} px-4 py-1 flex items-center align-center
+      className=" px-4 py-1 flex items-center align-center
                                      cursor-pointer
-                                     border rounded-3xl border-gray-800 `}
+                                     border rounded-3xl border-gray-800"
     >
-     <span className='z-40'>{children}</span>
+     <span className={`${styles.skillBtn}`}>{children}</span>
     </motion.button>
   </Link>
 );
