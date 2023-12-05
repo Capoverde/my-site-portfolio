@@ -5,6 +5,9 @@ import { Footer } from '../components/Footer/Footer'
 import SkillList from '../components/SkillButton/SkillList'
 import Image from 'next/image'
 import Link from 'next/link'
+import { RiLinkedinLine } from "react-icons/ri";
+import { VscGithubAlt } from "react-icons/vsc";
+import { RiFacebookLine } from "react-icons/ri";
 import styles from './About.module.css'
 
 export default function About () {
@@ -20,13 +23,36 @@ export default function About () {
        <p className="text-gray-400 px-6 py-6 h-full">
        A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications.
        </p>
-         <div className="flex justify-end">
-         <Link className=' text-gray-100 mx-6 mb-6  border border-[#3e3e3e] px-8 py-2 rounded-3xl '
-         href='/PortfolioPage'
-        >
-          <span>Portfolio</span>
-        </Link>
-         </div>
+         <div className="items-baseline flex justify-between w-full">
+         <div className="px-6 flex w-1/2 gap-[1rem]">
+           <Link 
+                 href='https://www.linkedin.com/in/piotr-s%C5%82obi%C5%84ski-1b432428b/'
+                 target='_blank'
+                 title='LinkeIn'
+           >
+             <RiLinkedinLine className={`${styles.socialIcons}`} color="#3e3e3e" />
+           </Link>
+           <Link 
+                 href='https://github.com/Capoverde'
+                 target='_blank'
+                 title='GitHub'
+           >
+             <VscGithubAlt className={`${styles.socialIcons}`} color="#3e3e3e"/>
+           </Link>
+           <Link 
+                 href='https://www.facebook.com/profile.php?id=100092179127170'
+                 target='_blank'
+                 title='Facebook'
+           >
+             <RiFacebookLine className={`${styles.socialIcons}`} color="#3e3e3e"/>
+           </Link>
+           </div>
+          <Link className=' inline-block text-gray-100 mx-6 mb-6  border border-[#3e3e3e] px-8 py-2 rounded-3xl '
+                href='/PortfolioPage'
+          >
+           <span>Portfolio</span>
+          </Link>  
+          </div>
       </div>
       <div className="h-full border-l border-[#3e3e3e]
                       flex items-center justify-center
