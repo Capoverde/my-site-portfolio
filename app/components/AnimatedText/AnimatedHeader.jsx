@@ -20,8 +20,8 @@ export const AnimatedHeader = ({
           animate="visible"
           transition={{ staggerChildren: 0.09 }}
         >
-         {text.split(" ").map((word) => 
-          <span className='inline-block'>
+         {text.split(" ").map((word, index) => 
+          <span className='inline-block' key={index}>
            {word.split("").map((char, index) => (
             <m.span
               className='inline-block'

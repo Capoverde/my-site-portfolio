@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={DMsans.className}>{children}</body>
+      <body className={DMsans.className} suppressHydrationWarning={true}>{children}</body>
     </html>
   );
 }

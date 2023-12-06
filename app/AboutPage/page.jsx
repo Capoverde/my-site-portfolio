@@ -20,7 +20,6 @@ export default function About () {
     <main className={`${styles.FadeIn} bg-transparent min-h-screen min-w-screen mx-[10%]
                             border-r border-l border-[#3e3e3e] relative
     `}>
-     {/* <h1 className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]">About Me</h1> */}
      <AnimatedHeader text="About Me" className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]"/>
      <div className="wrapper w-full h-1/2 flex justify-between relative">
       <div className="flex-col pb-14 overflow-hidden w-1/2">
@@ -77,11 +76,10 @@ export default function About () {
      <div className="w-full h-full border-t border-[#3e3e3e] flex-col">
       <h2 className="text-2xl text-gray-400 px-6 pt-6">
         <AnimatedHeader text="Click the button to learn more about technology I am familiar with."
-        
         />
       </h2>
        <SkillList />
-       <AnimatedP text="         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias explicabo laudantium modi esse, distinctio delectus! Sapiente amet pariatur ab exercitationem repudiandae suscipit molestias? Voluptatum, facere? Esse distinctio optio necessitatibus pariatur animi odio temporibus recusandae facere nisi architecto ut repellendus hic accusamus officia commodi exercitationem cum nesciunt asperiores, mollitia debitis veritatis." 
+       <AnimatedP text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias explicabo laudantium modi esse, distinctio delectus! Sapiente amet pariatur ab exercitationem repudiandae suscipit molestias? Voluptatum, facere? Esse distinctio optio necessitatibus pariatur animi odio temporibus recusandae facere nisi architecto ut repellendus hic accusamus officia commodi exercitationem cum nesciunt asperiores, mollitia debitis veritatis." 
        className="text-gray-500 px-6 mt-auto columns-2" /> 
      </div>
     </main>
