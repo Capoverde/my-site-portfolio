@@ -8,7 +8,8 @@ const { pluginoptions } = require('@mightymeld/runtime');
 
 const nextConfig = {
   experimental: {
-    swcPlugins: [['@mightymeld/runtime/swc-plugin-mightymeld', pluginoptions()]]
+    swcPlugins: [['@mightymeld/runtime/swc-plugin-mightymeld', pluginoptions()]],
+    font: true
   }
 };
 

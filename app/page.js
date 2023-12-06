@@ -9,7 +9,6 @@ import { NavLinks } from "./components/NavLinks/NavLinks";
 import styles from "./Styles/HomePage.module.css";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
-import { GoArrowDownRight } from "react-icons/go";
 import { MdSubdirectoryArrowLeft } from "react-icons/md"
 
 
@@ -22,16 +21,6 @@ export default function Home() {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-  };
-
-  const downloadPdf = () => {
-    const router = useRouter();
-    const pdfUrl = `${router.basePath}/assets/resume.pdf`;
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'resume.pdf';
-    link.click();
-    alert('resume click')
   };
 
   return (
@@ -170,7 +159,7 @@ export default function Home() {
                        number="02" 
                        title="Resume" 
                        className="text-gray-500"
-                       onClick={downloadPdf} 
+                      //  onClick={downloadPdf}
                        />
             </m.div>
             <m.div

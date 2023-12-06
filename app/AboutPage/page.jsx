@@ -1,7 +1,10 @@
 "use client"
 import React, { useState, useRef } from 'react'
+import { motion as m} from 'framer-motion';
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
+import { AnimatedHeader } from '../components/AnimatedText/AnimatedHeader';
+import { AnimatedP } from '../components/AnimatedText/AnimatedP';
 import SkillList from '../components/SkillButton/SkillList'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,13 +21,13 @@ export default function About () {
                             border-r border-l border-[#3e3e3e] relative
     `}>
      <h1 className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]">About Me</h1>
-     <div className="wrapper w-full h-1/2 flex justify-between ">
+     <div className="wrapper w-full h-1/2 flex justify-between relative">
       <div className="flex-col pb-14 overflow-hidden w-1/2">
-       <p className="text-gray-400 px-6 py-6 h-full">
-       A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications.
-       </p>
-         <div className="items-baseline flex justify-between w-full">
-         <div className="px-6 flex w-1/2 gap-[1rem]">
+        <AnimatedP text="A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications."
+        className="text-gray-400 px-6 py-6 h-full"
+        /> 
+         <div className="items-baseline flex justify-between absolute bottom-0 left-0 w-1/2">
+         <div className="px-6 pt-3 flex w-1/2 gap-[1rem]">
            <Link 
                  href='https://www.linkedin.com/in/piotr-s%C5%82obi%C5%84ski-1b432428b/'
                  target='_blank'
@@ -72,7 +75,9 @@ export default function About () {
      </div>
      <div className="w-full h-full border-t border-[#3e3e3e] flex-col">
       <h2 className="text-2xl text-gray-400 px-6 pt-6">
-        Click the button to learn more about technology
+        <AnimatedHeader text="Click the button to learn more about technology I am familiar with."
+        
+        />
       </h2>
        <SkillList />
        <p className='text-gray-500 px-6 mt-auto columns-2'>

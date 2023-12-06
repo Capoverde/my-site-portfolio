@@ -2,19 +2,8 @@
 import Link from 'next/link';
 import { GoArrowDownRight } from 'react-icons/go';
 import { motion as m } from 'framer-motion';
-import { useRouter } from 'next/router';
 
-
-  const downloadPdf = () => {
-    const router = useRouter();
-    const pdfUrl = `${router.basePath}/assets/resume.pdf`;
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'resume.pdf';
-    link.click();
-  };
-
-export const NavLinks = ({ href, number, title, className, onClick }) => (
+export const NavLinks = ({ href, number, title, className }) => (
 
 
   <m.div
