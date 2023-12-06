@@ -14,4 +14,3 @@ const nextConfig = {
 };
 
 module.exports = process.env.MIGHTYMELD ? nextConfig : {};
-
