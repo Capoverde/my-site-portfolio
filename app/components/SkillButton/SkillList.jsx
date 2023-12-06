@@ -62,7 +62,7 @@ const buttonData = [
   { id:26, text: 'PhotoShop', href: '/AboutPage', icon: <DiPhotoshop color={iconColor} /> },
 ];
 
- export const SkillsList = () => {
+  const SkillsList = () => {
    const controls = useAnimation()
    useEffect(() => {
      controls.start((i) => ({
@@ -91,3 +91,5 @@ const buttonData = [
      </div>
    );
  };
+
+ export default SkillsList;
