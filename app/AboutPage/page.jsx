@@ -5,7 +5,7 @@ import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import { AnimatedHeader } from '../components/AnimatedText/AnimatedHeader';
 import { AnimatedP } from '../components/AnimatedText/AnimatedP';
-import SkillList from '../components/SkillButton/SkillList'
+import { SkillList } from '../components/SkillButton/SkillList'
 import Image from 'next/image'
 import Link from 'next/link'
 import { RiLinkedinLine } from "react-icons/ri";

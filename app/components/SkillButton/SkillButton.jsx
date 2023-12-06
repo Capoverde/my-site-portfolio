@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import styles from './SkillButton.module.css';
 import technoData from '../../AboutPage/technoData.json';
 
-const SkillButton = ({ href, children }) => (
+export const SkillButton = ({ href, children }) => (
   <Link href={href} passHref>
     <motion.button
       whileHover={{ scale: 1.1 }}
@@ -17,5 +17,3 @@ const SkillButton = ({ href, children }) => (
     </motion.button>
   </Link>
 );
-
-export default SkillButton;
