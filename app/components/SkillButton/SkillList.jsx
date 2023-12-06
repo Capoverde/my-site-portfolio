@@ -72,8 +72,7 @@ const buttonData = [
   }, [controls]);
 
   return (
-    <div className="flex align-center flex-wrap w-full mt-2 px-6 py-6 gap-4 z-50 
-                    border-r border-[#3e3e3e]
+    <div className="flex align-center flex-wrap w-full mt-2 px-6 py-6 gap-4 z-50
     ">
       {buttonData.map((button, index) => (
         <m.div
