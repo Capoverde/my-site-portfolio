@@ -49,45 +49,56 @@ const layoutVariants = {
 
 const PortfolioPage = () => {
   return (
-    <div className={`${styles.fadeIn} w-screen h-screen puff-in-center`}>
-      <Header />
-      <header className="Portfolio__header bg-gray-200">
-        <h1 className="title font-bold text-[6rem] pt-[3rem] px-[10%]">
+    // <div className={`${styles.fadeIn} w-screen h-screen puff-in-center`}>
+    //   <Header />
+    //   <header className="Portfolio__header bg-gray-200">
+    //     <h1 className="title font-bold text-[6rem] pt-[3rem] px-[10%]">
+    //       Portfolio
+    //     </h1>
+    //   </header>
+    //   <main className="min-w-screen min-h-screen bg-gray-200 px-[10%]">
+    //     <div className="flex w-full h-full gap-20 items-start">
+    //       <div className="w-full py-[50vh]">
+    //         <ul>
+    //           {features.map((feature) => (
+    //             <li key={feature.id}>
+    //               <FeaturesTitle id={feature.id}>{feature.title}</FeaturesTitle>
+    //             </li>
+    //           ))}
+    //         </ul>
+    //       </div>
+    //       <div className="w-full sticky top-0 flex h-screen items-center">
+    //         <div className="relative w-full aspect-square bg-gray-100 rounded-[25px]">
+    //           <AnimatePresence exitBeforeEnter={false} mode="wait">
+    //             <m.div
+    //               key={features.map((feature) => feature.id).join("-")}
+    //               initial="initial"
+    //               animate="animate"
+    //               exit="exit"
+    //               variants={layoutVariants}
+    //               transition={{ duration: 0.75 }}
+    //             >
+    //               {features.map((feature) => (
+    //                 <feature.card id={feature.id} key={feature.id} />
+    //               ))}
+    //             </m.div>
+    //           </AnimatePresence>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </main>
+    //   <Footer />              
+    // </div>
+    <div  className={`${styles.fadeIn} w-screen h-screen puff-in-center`}>
+    <Header />
+      <div className="wrapper mx-[10%] h-full border-l border-r border-[#3e3e3e]">
+        <header className={`${styles.title__header} w-full py-8 pl-6 border-b border-[#3e3e3e]`}>
+        <h1 className="title font-bold text-[6rem] text-gray-200">
           Portfolio
-        </h1>
-      </header>
-      <main className="min-w-screen min-h-screen bg-gray-200 px-[10%]">
-        <div className="flex w-full h-full gap-20 items-start">
-          <div className="w-full py-[50vh]">
-            <ul>
-              {features.map((feature) => (
-                <li key={feature.id}>
-                  <FeaturesTitle id={feature.id}>{feature.title}</FeaturesTitle>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="w-full sticky top-0 flex h-screen items-center">
-            <div className="relative w-full aspect-square bg-gray-100 rounded-[25px]">
-              <AnimatePresence exitBeforeEnter={false} mode="wait">
-                <m.div
-                  key={features.map((feature) => feature.id).join("-")}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  variants={layoutVariants}
-                  transition={{ duration: 0.75 }}
-                >
-                  {features.map((feature) => (
-                    <feature.card id={feature.id} key={feature.id} />
-                  ))}
-                </m.div>
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />              
+         </h1>
+        </header>
+        
+      </div>
     </div>
   );
 };

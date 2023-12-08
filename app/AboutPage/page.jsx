@@ -20,7 +20,6 @@ export default function About () {
     <main className={`${styles.FadeIn} bg-transparent min-h-screen min-w-screen mx-[10%]
                             border-r border-l border-[#3e3e3e] relative
     `}>
-     {/* <h1 className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]">About Me</h1> */}
      <AnimatedHeader text="About Me" className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]"/>
      <div className="wrapper w-full h-1/2 flex justify-between relative">
       <div className="flex-col pb-14 overflow-hidden w-1/2">
