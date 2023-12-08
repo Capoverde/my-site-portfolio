@@ -209,7 +209,8 @@ const Contact = () => {
             <button className="w-full px-6 py-3 mt-4 
                                text-sm font-medium tracking-wide text-white capitalize 
                                transition-colors duration-300 transform 
-                               bg-black rounded-md hover:bg-white hover:text-black 
+                               border border-gray-700
+                               bg-black rounded-md hover:bg-gray-600 hover:text-gray-400
                                focus:outline-none focus:ring focus:ring-gray-300">
               get in touch
             </button>

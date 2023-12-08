@@ -18,7 +18,7 @@ export default function About () {
     <>
     <Header />
     <main className={`${styles.FadeIn} bg-transparent min-h-screen min-w-screen mx-[10%]
-                            border-r border-l border-[#3e3e3e] relative
+                                       border-r border-l border-[#3e3e3e] relative pb-8
     `}>
      <AnimatedHeader text="About Me" className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]"/>
      <div className="wrapper w-full h-1/2 flex justify-between relative">
