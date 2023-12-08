@@ -5,6 +5,7 @@ import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import { AnimatedHeader } from '../components/AnimatedText/AnimatedHeader';
 import { AnimatedP } from '../components/AnimatedText/AnimatedP';
+import { AboutContent } from './AboutContent';
 import SkillList  from '../components/SkillButton/SkillList'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,9 +24,10 @@ export default function About () {
      <AnimatedHeader text="About Me" className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]"/>
      <div className="wrapper w-full h-1/2 flex justify-between relative">
       <div className="flex-col pb-14 overflow-hidden w-1/2">
-        <AnimatedP text="A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications."
+        {/* <AnimatedP text="A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications."
         className="text-gray-400 px-6 py-6 h-full"
-        /> 
+        />  */}
+            <AboutContent />
          <div className="items-baseline flex justify-between absolute bottom-0 left-0 w-1/2">
          <div className="px-6 pt-3 flex w-1/2 gap-[1rem]">
            <Link 

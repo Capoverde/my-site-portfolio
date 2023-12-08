@@ -1,6 +1,7 @@
 import React from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
 import "../Styles/globals.css"; // Popraw ścieżkę do pliku globals.css
+import { SkillButtonProvider } from '../components/SkillButton/SkillButtonContext';
 import { useRouter } from "next/router";
 
 const MyApp = ({ Component, pageProps }) => {
@@ -23,7 +24,9 @@ const MyApp = ({ Component, pageProps }) => {
           exitState: { opacity: 0 }, // Popraw błąd w nazwie exitState
         }}
       >
-        <Component {...pageProps} />
+        <SkillButtonProvider>
+         <Component {...pageProps} />
+        </SkillButtonProvider>
       </m.div>
     </AnimatePresence>
   );
