@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import styles from './SkillButton.module.css';
 import technoData from '../../AboutPage/technoData.json';
 
-export const SkillButton = ({ href, children }) => (
-  <Link href={href} passHref>
+export const SkillButton = ({  children }) => (
+  <button >
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
@@ -15,5 +15,5 @@ export const SkillButton = ({ href, children }) => (
     >
      <span className={`${styles.skillBtn}`}>{children}</span>
     </motion.button>
-  </Link>
+  </button>
 );
