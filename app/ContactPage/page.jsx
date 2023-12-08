@@ -88,7 +88,7 @@ const Contact = () => {
 
             <div className="flex mt-4 -mx-1.5 px-8 gap-6">
              <Link
-                className={`${styles.socialIcons} z-[50]`}
+                 className={`${styles.socialIcons} z-[50]`}
                 href="https://www.linkedin.com/in/piotr-s%C5%82obi%C5%84ski-1b432428b/"
                 target="_blank"
                 title="LinkedIn"

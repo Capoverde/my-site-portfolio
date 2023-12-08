@@ -82,7 +82,7 @@ const buttonData = [
            exit={{ scale: 0 }}
            transition={{ duration: 0.5, delay: index * 0.2 }}
          >
-           <SkillButton >
+           <SkillButton href={button.href}>
              <span className={`${styles.btnIcon} inline-block`}>{button.icon}</span> {' '}
              <span className="btnText">{button.text}</span>
            </SkillButton>
