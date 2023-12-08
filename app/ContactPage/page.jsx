@@ -1,6 +1,9 @@
-import React from "react";
+"use client"
+import React, {useRef} from "react";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
+import { AnimatedHeader } from "../components/AnimatedText/AnimatedHeader";
+import { AnimatedP } from "../components/AnimatedText/AnimatedP";
 import Link from 'next/link'
 import styles from "./ContactPage.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -8,9 +11,9 @@ import { BsEnvelopeAtFill } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <div className={`${styles.fadeIn}`}>
+    <div className={`${styles.fadeIn} bg-black`}>
       <Header />
-      <section className="min-h-screen bg-gray-200 dark:bg-gray-200 lg:flex relative overflow-hidden">
+      <section className="min-h-screen bg-black dark:bg-black lg:flex relative overflow-hidden">
         <div className={`${styles.blob2} absolute bg-orange-500 
                                        w-[50rem] h-[100rem]
                                        bg-opacity-50
@@ -38,23 +41,23 @@ const Contact = () => {
                                        blur-3xl
                                        z-1`}></div>                                       
         <div className="blob2 absolute"></div>
-        <div className="flex flex-col
-                        xl:pl-[10%] xl:w-1/2 
-                       lg:dark:bg-black
+
+        <div className="flex flex-col 
+                        xl:ml-[10%] xl:w-1/2 
+                        lg:dark:bg-black
                         border-l border-[#3e3e3e]
                        ">
-          <h1 className="title md:text-[7rem] text-[4rem] text-gray-400
-                         border-b border-l border-[#3e3e3e] w-full 
-          ">Contact</h1>
-          <p className="mt-4 text-gray-500 dark:text-gray-400 z-10 
+          <AnimatedHeader text="Contact" className="title md:text-[7rem] text-[4rem] text-gray-400
+                         border-b border-l border-[#3e3e3e] w-full px-6"/>
+          <AnimatedP text="Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!<br/>
+          Ask me everything and I would love to hear from you."
+          className="mt-4 text-gray-500 dark:text-gray-400 z-10 
                          border-b border-l  border-[#3e3e3e] xl:pb-6
-          ">
-          Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!<br/>
-          Ask me everything and I would love to hear from you.
-          </p>
-            <h3 className="border-l border-[#3e3e3e] my-4 font-medium text-gray-600 dark:text-gray-300">Call me or text me</h3>
+                         px-6"
+          />
+            <h3 className="border-[#3e3e3e] my-4 font-medium text-gray-600 dark:text-gray-300 px-6">Call me or text me</h3>
           <div className="text-gray-400 flex mt-4 -mx-1.5 flex-col md:flex-row
-                           border-b border-l border-[#3e3e3e] xl:pb-6
+                           border-b border-[#3e3e3e] xl:pb-6 px-6
           ">
             <Link href="#">
             <FaPhoneAlt className="inline-block text-xl mr-3 text-gray-400 transition-colors duration-300 transform hover:text-gray-500" />
@@ -70,11 +73,11 @@ const Contact = () => {
             </Link>
           </div>
           <div className="mt-6 md:mt-8 border-b border-[#3e3e3e] xl:pb-6">
-            <h3 className="font-medium text-gray-600 dark:text-gray-300 ">
+            <h3 className="font-medium text-gray-600 dark:text-gray-300 px-6">
               Follow me
             </h3>
 
-            <div className="flex mt-4 -mx-1.5 ">
+            <div className="flex mt-4 -mx-1.5 px-6">
               <Link 
                 className="mx-1.5 dark:hover:text-gray-400 text-gray-400 
                            transition-colors duration-300 transform hover:text-gray-500"
@@ -141,7 +144,7 @@ const Contact = () => {
         </div>
 
         <div className="w-full p-8 pt-0 lg:w-1/2 xl:w-1/2 lg:px-12 xl:px-24
-                        flex flex-col justify-center grow
+                        flex flex-col justify-center grow 
                         border-l border-[#3e3e3e]
                       bg-black
                         ">
@@ -179,8 +182,8 @@ const Contact = () => {
                    bg-white border border-gray-200 rounded-md 
                    dark:placeholder-gray-600 dark:bg-black
                    dark:text-gray-300 dark:border-gray-700 
-                   focus:border-gray-400 dark:focus:border-gray-400 
-                   focus:ring-gray-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                   focus:border-gray-700 dark:focus:border-gary-700 
+                   focus:ring-gray-700 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
@@ -196,8 +199,8 @@ const Contact = () => {
                          bg-white border border-gray-200 rounded-md md:h-56 
                          dark:placeholder-gray-600 dark:bg-black
                          dark:text-gray-300 dark:border-gray-700 
-                         focus:border-gray-400 dark:focus:border-gray-400 
-                         focus:ring-gray-400 focus:outline-none focus:ring 
+                         focus:border-gray-700 dark:focus:border-gary-700 
+                         focus:ring-gray-700 focus:outline-none focus:ring 
                          focus:ring-opacity-40"
                 placeholder="Message"
               ></textarea>
@@ -210,8 +213,8 @@ const Contact = () => {
                                text-sm font-medium tracking-wide text-white capitalize 
                                transition-colors duration-300 transform 
                                border border-gray-700
-                               bg-black rounded-md hover:bg-gray-600 hover:text-gray-400
-                               focus:outline-none focus:ring focus:ring-gray-300">
+                               bg-black rounded-md hover:bg-gray-600 hover:text-gray-700
+                               focus:outline-none focus:ring focus:ring-gray-700">
               get in touch
             </button>
           </form>
