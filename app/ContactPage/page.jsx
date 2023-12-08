@@ -13,6 +13,10 @@ import { VscGithubAlt } from "react-icons/vsc";
 import { RiFacebookLine } from "react-icons/ri";
 
 const Contact = () => {
+
+  const contactText = `Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!
+  \nAsk me everything and I would love to hear from you.`
+  
   return (
     <div className={`${styles.fadeIn} bg-black`}>
       <Header />
@@ -52,8 +56,7 @@ const Contact = () => {
                        ">
           <AnimatedHeader text="Contact" className="title md:text-[7rem] text-[4rem] text-gray-400
                          border-b border-[#3e3e3e] w-full px-6"/>
-          <AnimatedP text="Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!<br/>
-          Ask me everything and I would love to hear from you."
+          <AnimatedP text={contactText}
           className="mt-4 text-gray-500 dark:text-gray-400 z-10 
                          border-b  border-[#3e3e3e] xl:pb-6
                          px-6"
@@ -85,28 +88,28 @@ const Contact = () => {
 
             <div className="flex mt-4 -mx-1.5 px-8 gap-6">
              <Link
-                className="text-2xl"
+                 className={`${styles.socialIcons} z-[50]`}
                 href="https://www.linkedin.com/in/piotr-s%C5%82obi%C5%84ski-1b432428b/"
                 target="_blank"
                 title="LinkedIn"
               >
-               <RiLinkedinLine color="#9ca3af" />
+               <RiLinkedinLine className="text-2xl" color="#9ca3af" />
               </Link>
               <Link
-                 className="text-2xl"
+                className={`${styles.socialIcons} z-[50]`}
                 href="https://github.com/Capoverde"
                 target="_blank"
                 title="github.com/Capoverde"
               >
-               <VscGithubAlt color="#9ca3af" />
+               <VscGithubAlt className="text-2xl" color="#9ca3af" />
               </Link>
               <Link
-                 className="text-2xl"
+                className={`${styles.socialIcons} z-[50]`}
                 href="https://www.facebook.com/profile.php?id=100092179127170"
                 target="_blank"
                 title="Facebook"
               >
-               <RiFacebookLine color="#9ca3af" />
+               <RiFacebookLine className="text-2xl" color="#9ca3af" />
               </Link>
             </div>
           </div>

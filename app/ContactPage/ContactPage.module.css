@@ -46,3 +46,10 @@
     transform: rotateZ(360deg);
   }
 }
+
+.socialIcons:hover
+{
+  color: white !important;
+  transform: scale(1.5);
+  transition: all 0.35s ease;
+}
