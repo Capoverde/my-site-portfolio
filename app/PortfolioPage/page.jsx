@@ -19,37 +19,37 @@ import styles from "./PortfolioPage.module.css";
 const features = [
   {
     title: "FullStack ToDo Applicaton",
-    describe: "application with coll features",
+    describe: "application with cool features",
     id: "to-do-app",
     card: CardProductCatalog,
   },
   {
     title: "FullStack product catalog store",
     id: "product-catalog",
-    describe: "application with coll features",
+    describe: "application with cool features",
     card: WbsitteNext,
   },
   {
     title: "Website in Next.js",
     id: "lawyers-ebsite",
-    describe: "application with coll features",
+    describe: "application with cool features",
     card: EventHorizon,
   },
   {
     title: "The Event Horizon",
     id: "website and gallery",
-    describe: "application with coll features",
+    describe: "application with cool features",
     card: TheMet,
   },
   {
     title: "The Met",
     id: "museum-website",
-    describe: "application with coll features",
+    describe: "application with cool features",
     card: Interdom,
   },
 ];
 
-const portfolioText = `Checkout Portfolio Project by cliking in the project image on the right.
+const portfolioText = `Checkout Portfolio Project by cliking in the button in the project image on the right.
                       Here You will find my selected projects in a various tech stacks. 
  `
 
@@ -61,7 +61,8 @@ const layoutVariants = {
 
 const PortfolioPage = () => {
   return (
-    <div className={`${styles.fadeIn} w-screen h-screen puff-in-center`}>
+    <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
+      {/* <div className={`${styles.bgShape2} absolute top-[-50%] left-[-15%] w-[300px] h-[300px] bg-purple-600`}></div> */}
       <Header />
       <header className="Portfolio__header pl-6 mx-[10%] border-b border-l border-r border-[#3e3e3e] ">
        <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200" />
@@ -72,16 +73,21 @@ const PortfolioPage = () => {
             <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e]">
              <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6" />
             </div>
-            <ul className="px-6">
+            <ul>
               {features.map((feature) => (
-                <li key={feature.id}>
-                  <FeaturesTitle id={feature.id}>{feature.title}</FeaturesTitle>
+                <li className="border-b border-[#3e3e3e] px-6" key={feature.id}>
+                  <FeaturesTitle id={feature.id}>
+                    <span className="inline-block">{feature.title}</span>
+                    <p className="py-6 text-[1rem] font-normal ">
+                      {feature.describe}
+                    </p>
+                  </FeaturesTitle>
                 </li>
               ))}
             </ul>
           </div>
           <div className="w-full sticky top-0 flex h-screen items-center border-l border-[#3e3e3e]">
-            <div className="relative w-full aspect-square bg-gray-100 rounded-[25px]">
+            <div className="relative w-full aspect-square bg-gray-400">
               <AnimatePresence exitBeforeEnter={false} mode="wait">
                 <m.div
                   key={features.map((feature) => feature.id).join("-")}
