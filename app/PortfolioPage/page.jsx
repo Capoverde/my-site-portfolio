@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { motion as m, AnimatePresence } from "framer-motion";
+import React, { useRef} from "react";
+import { motion as m, AnimatePresence, useInView } from "framer-motion";
 import {
   CardProductCatalog,
   WbsitteNext,
@@ -52,7 +52,6 @@ const features = [
 const portfolioText = `Checkout Portfolio Project by cliking in the button in the project image on the right.
                       Here You will find my selected projects in a various tech stacks. 
  `
-
 const layoutVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -60,9 +59,22 @@ const layoutVariants = {
 };
 
 const PortfolioPage = () => {
+
+  const body = useRef(null);
+  const isInView = useInView(body, {once: true, margin: "-75%"})
+
+
+  const animation = {
+    initial: {y: "100%"},
+    enter: i => ({y: "0", transition: {duration: 0.75, ease: [0.33, 1, 0.68, 1],  delay: 0.075 * i}})
+  }
+
+  const phrases =[
+    'Portfolio',
+  ]
+  
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
-      {/* <div className={`${styles.bgShape2} absolute top-[-50%] left-[-15%] w-[300px] h-[300px] bg-purple-600`}></div> */}
       <Header />
       <header className="Portfolio__header pl-6 mx-[10%] border-b border-l border-r border-[#3e3e3e] ">
        <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200" />

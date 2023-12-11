@@ -85,11 +85,12 @@ import { motion as m } from 'framer-motion';
 import technoData from '../../AboutPage/technoData.json';
 import buttonData from './buttonData';
 import { SkillButton } from './SkillButton';
-import { useSkillButtonContext } from './SkillButton/SkillButtonContext';
+import styles from './SkillButton.module.css';
+// import { useSkillButtonContext } from './SkillButton/SkillButtonContext';
 
 const SkillsList = () => {
   const [selectedData, setSelectedData] = useState(null);
-  const { updateSelectedData } = useSkillButtonContext();
+  //const { updateSelectedData } = useSkillButtonContext();
 
   useEffect(() => {
     const data = technoData.find((item) => item.id === selectedData?.id);
@@ -120,7 +121,10 @@ const SkillsList = () => {
             selectedData={selectedData}
             handleClick={handleClick}
             id={button.id}
-          />
+          >
+            <span className={`${styles.btnIcon} inline-block`}>{button.icon}</span> {' '}
+            <span className="btnText">{button.text}</span>
+          </SkillButton>
         </m.div>
       ))}
     </div>
