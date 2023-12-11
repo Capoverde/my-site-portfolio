@@ -14,6 +14,9 @@ import { RiFacebookLine } from "react-icons/ri";
 
 const Contact = () => {
 
+  const tel ="+48503143309"
+  const email ="slobinski.dev@gmail.com"
+
   const contactText = `Currently, I reside in the city of Łódź, in central Poland, and I am ready for relocation to any part of the world. I am also open to remote work. Please feel free to get in touch and let me know how I can assist you!
   \nAsk me everything and I would love to hear from you.`
   
@@ -65,14 +68,14 @@ const Contact = () => {
           <div className="text-gray-400 flex mt-4 flex-col md:flex-row
                            border-b border-[#3e3e3e] xl:pb-6 px-8
           ">
-            <Link href="#">
+            <Link href={`tel:${tel}`}>
               <FaPhoneAlt className="inline-block 
                           text-xl mr-3 text-gray-400 
                           transition-colors duration-300
                           transform hover:text-gray-500" />
             +48 503 143 309
             </Link>
-            <Link href="#" className="mt-3 md:mt-0">
+            <Link href={`tel:${email}`} className="mt-3 md:mt-0">
             <BsEnvelopeAtFill className="inline-block text-xl
                                          md:ml-3 mr-3      
                                        text-gray-400 transition-colors duration-300 transform 

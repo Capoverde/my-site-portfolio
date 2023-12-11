@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import { motion as m} from 'framer-motion';
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
@@ -15,6 +15,13 @@ import { RiFacebookLine } from "react-icons/ri";
 import styles from './About.module.css'
 
 export default function About () {
+  const [selectedText, setSelectedText] = useState('');
+
+  const handleSkillButtonClick = (text) => {
+    setSelectedText(text);
+  };
+
+
   return (
     <>
     <Header />
@@ -23,11 +30,13 @@ export default function About () {
     `}>
      <AnimatedHeader text="About Me" className="title w-full px-8 border-b border-[#3e3e3e] font-bold text-gray-300 text-[6rem]"/>
      <div className="wrapper w-full h-1/2 flex justify-between relative">
-      <div className="flex-col pb-14 overflow-hidden w-1/2">
-        {/* <AnimatedP text="A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications."
+      <div className="flex-col pb-14 overflow-hidden w-1/2 text-gray-300">
+        {/* <AnimatedP text={setSelectedText} 
+        // "A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications."
         className="text-gray-400 px-6 py-6 h-full"
         />  */}
-            <AboutContent />
+         {setSelectedText}
+            {/* <AboutContent /> */}
          <div className="items-baseline flex justify-between absolute bottom-0 left-0 w-1/2">
          <div className="px-6 pt-3 flex w-1/2 gap-[1rem]">
            <Link 
@@ -81,7 +90,7 @@ export default function About () {
         
         />
       </h2>
-       <SkillList />
+       <SkillList onSkillButtonClick={handleSkillButtonClick} />
        <AnimatedP text="         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias explicabo laudantium modi esse, distinctio delectus! Sapiente amet pariatur ab exercitationem repudiandae suscipit molestias? Voluptatum, facere? Esse distinctio optio necessitatibus pariatur animi odio temporibus recusandae facere nisi architecto ut repellendus hic accusamus officia commodi exercitationem cum nesciunt asperiores, mollitia debitis veritatis." 
        className="text-gray-500 px-6 mt-auto columns-2" /> 
      </div>
