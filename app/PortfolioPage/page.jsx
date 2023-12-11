@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 import { motion as m, AnimatePresence, useInView } from "framer-motion";
 import {
   CardProductCatalog,
@@ -13,6 +13,7 @@ import { Footer } from '../components/Footer/Footer'
 import { FeaturesTitle } from "../components/FeaturesTitle";
 import { AnimatedHeader } from "../components/AnimatedText/AnimatedHeader";
 import { AnimatedP } from "../components/AnimatedText/AnimatedP";
+import { portfolioVisual } from "../components/Visual";
 import styles from "./PortfolioPage.module.css";
 
 
@@ -75,6 +76,7 @@ const PortfolioPage = () => {
   
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
+      <portfolioVisual />
       <Header />
       <header className="Portfolio__header pl-6 mx-[10%] border-b border-l border-r border-[#3e3e3e] ">
        <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200" />

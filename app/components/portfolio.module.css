@@ -1,0 +1,6 @@
+.cardDiv {
+    background-image: url('../../public/logoDivBg.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
