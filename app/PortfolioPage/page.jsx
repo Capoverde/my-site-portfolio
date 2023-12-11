@@ -13,7 +13,7 @@ import { Footer } from '../components/Footer/Footer'
 import { FeaturesTitle } from "../components/FeaturesTitle";
 import { AnimatedHeader } from "../components/AnimatedText/AnimatedHeader";
 import { AnimatedP } from "../components/AnimatedText/AnimatedP";
-import { portfolioVisual } from "../components/Visual";
+import { OtherVisual, PortfolioVisual } from "../components/Visual";
 import styles from "./PortfolioPage.module.css";
 
 
@@ -23,30 +23,37 @@ const features = [
     describe: "application with cool features",
     id: "to-do-app",
     card: CardProductCatalog,
+    visual: OtherVisual
   },
   {
     title: "FullStack product catalog store",
     id: "product-catalog",
     describe: "application with cool features",
     card: WbsitteNext,
+    visual: OtherVisual
+
   },
   {
     title: "Website in Next.js",
     id: "lawyers-ebsite",
     describe: "application with cool features",
     card: EventHorizon,
+    visual: PortfolioVisual
   },
   {
     title: "The Event Horizon",
     id: "website and gallery",
     describe: "application with cool features",
     card: TheMet,
+    visual: OtherVisual
   },
   {
     title: "The Met",
     id: "museum-website",
     describe: "application with cool features",
     card: Interdom,
+    visual: OtherVisual
+
   },
 ];
 
@@ -76,14 +83,16 @@ const PortfolioPage = () => {
   
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
-      <portfolioVisual />
       <Header />
       <header className="Portfolio__header pl-6 mx-[10%] border-b border-l border-r border-[#3e3e3e] ">
        <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200" />
       </header>
-      <main className="min-w-screen min-h-screen mx-[10%] boder-l border-r border-[#3e3e3e]">
+      <main className="min-w-screen min-h-screen  mx-[10%] boder-l border-r border-[#3e3e3e]">
         <div className="flex w-full h-full items-start border-l border-[#3e3e3e]">
           <div className="w-full py-[50vh] relative">
+            {features.map(feature => 
+               <feature.visual id={feature.id} key={feature.id}/>
+              )}
             <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e]">
              <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6" />
             </div>
