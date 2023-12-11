@@ -35,7 +35,6 @@ export default function About () {
         // "A diligent full stack developer with expertise in HTML, CSS, JavaScript/TypeScript, and React, I create intuitive and secure interfaces by combining my creative and analytical skills with robust security measures. My diverse background in programming, property management, and pilot training allows me to adapt to challenges, work closely with teams, and deliver high-quality web applications."
         className="text-gray-400 px-6 py-6 h-full"
         />  */}
-         {setSelectedText}
             {/* <AboutContent /> */}
          <div className="items-baseline flex justify-between absolute bottom-0 left-0 w-1/2">
          <div className="px-6 pt-3 flex w-1/2 gap-[1rem]">
@@ -90,7 +89,7 @@ export default function About () {
         
         />
       </h2>
-       <SkillList onSkillButtonClick={handleSkillButtonClick} />
+       <SkillList  />
        <AnimatedP text="         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias explicabo laudantium modi esse, distinctio delectus! Sapiente amet pariatur ab exercitationem repudiandae suscipit molestias? Voluptatum, facere? Esse distinctio optio necessitatibus pariatur animi odio temporibus recusandae facere nisi architecto ut repellendus hic accusamus officia commodi exercitationem cum nesciunt asperiores, mollitia debitis veritatis." 
        className="text-gray-500 px-6 mt-auto columns-2" /> 
      </div>
