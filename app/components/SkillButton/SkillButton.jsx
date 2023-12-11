@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
+
 import { motion as m } from 'framer-motion';
 import styles from './SkillButton.module.css';
-import technoData from '../../AboutPage/technoData.json';
 
 export const SkillButton = ({ id, children }) => {
-  const { updateSelectedData } = useSkillButtonContext();
-
-  const handleClick = () => {
-    const data = technoData.find((item) => item.id === id);
-    updateSelectedData(data);
-  };
 
   return (
     <button>

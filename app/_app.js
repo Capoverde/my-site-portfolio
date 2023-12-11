@@ -1,7 +1,26 @@
+// "use client"
+// import "../Styles/globals.css"; // Popraw ścieżkę do pliku globals.css
+// import { useState, createContext } from "react";
+// import { SkillButtonProvider } from './components/SkillButton/SkillButtonContext';
+// import { useRouter } from "next/router";
+
+// const MyApp = ({ Component, pageProps }) => {
+//   const router = useRouter();
+
+
+//   return (
+//          <SkillButtonProvider value={{ selectedData, updateSelectedData}}>
+//           <Component {...pageProps} />
+//          </SkillButtonProvider>
+//   );
+// };
+
+// export default MyApp;
+
 "use client"
 import "../Styles/globals.css"; // Popraw ścieżkę do pliku globals.css
 import { useState, createContext } from "react";
-import { SkillButtonProvier } from './components/SkillButton/';
+import { SkillButtonProvider } from './components/SkillButton/SkillButtonContext';
 import { useRouter } from "next/router";
 
 const MyApp = ({ Component, pageProps }) => {
@@ -9,9 +28,9 @@ const MyApp = ({ Component, pageProps }) => {
 
 
   return (
-         <SkillButton.Provider value={{ nameContext, setNameContext}}>
+         <SkillButtonProvider value={{ selectedData, updateSelectedData}}>
           <Component {...pageProps} />
-         </SkillButton.Provider>
+         </SkillButtonProvider>
   );
 };
 
