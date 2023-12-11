@@ -85,7 +85,7 @@ import { motion as m } from 'framer-motion';
 import technoData from '../../AboutPage/technoData.json';
 import buttonData from './buttonData';
 import { SkillButton } from './SkillButton';
-import { useSkillButtonContext } from './SkillButtonContext';
+import { useSkillButtonContext } from '../SkillButton/SkillButtonContext';
 
 const SkillsList = () => {
   const [selectedData, setSelectedData] = useState(null);

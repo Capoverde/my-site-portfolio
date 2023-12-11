@@ -26,8 +26,8 @@ export const SkillButtonProvider = ({ children }) => {
 // Custom hook to use the context
 export const useSkillButtonContext = () => {
   const context = useContext(SkillButtonContext);
-  if (!context) {
-    throw new Error('useSkillButtonContext must be used within a SkillButtonProvider');
-  }
+//   if (!context) {
+//     throw new Error('useSkillButtonContext must be used within a SkillButtonProvider');
+//   }
   return context;
 };
