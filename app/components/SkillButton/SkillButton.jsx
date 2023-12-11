@@ -13,14 +13,13 @@ export const SkillButton = ({ id, children }) => {
 
   return (
     <button>
-      <motion.button
+      <m.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        onClick={handleClick}
         className="px-4 py-1 flex items-center align-center cursor-pointer border rounded-3xl border-gray-800"
       >
         <span className={`${styles.skillBtn}`}>{children}</span>
-      </motion.button>
+      </m.button>
     </button>
   );
 };
