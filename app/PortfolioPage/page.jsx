@@ -60,8 +60,8 @@ const features = [
 ];
 
 const portfolioText = `Checkout Portfolio Project by cliking in the button in the project image on the right.
-                      Here You will find my selected projects in a various tech stacks.
-                      You can toggle a view back by clicking on the "back to portfolio button" on the bottom of the page.`
+                      Here You will find my selected projects in a various tech stacks. 
+ `
 const layoutVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -73,61 +73,14 @@ const PortfolioPage = () => {
   const [scope, animate] = useAnimate();
   const fullScreenFeature = useFeatureStore((state) => state.fullScreenFeature);
   const setFullScreenFeature = useFeatureStore(state => state.setFullScreenFeature);
-  const lastFullScreenFeature = useFeatureStore(state => state.lastFullScreenFeature);
-
 
   useEffect(() => {
     if(fullScreenFeature) {
-      animate([
-        [".feature-title", 
-         {opacity: 0, x: "-200px"}, 
-         {duration: 0.3, delay: stagger(0.05)}
-        ],
-        [
-          `.visual-${lastFullScreenFeature}`, 
-          {opacity:1, scale:1, pointerEvents: "auto"}, 
-          {at: "<"}
-        ],
-        [".active-card .gradient", 
-         {opacity: 0, scale:0},
-         {at: "<"}
-        ],
-        [".active-card", ".show-me-btn",
-         {opacity: 0},
-         {at: "<"}
-        ],
-        [".back-site-btn",
-         {opacity: 1, y: "0px"},
-         {at: "<"}
-        ],
-      ])
+      animate(".feature-title", {opacity: 0, x: "-200px"}, {duration: 0.3, delay: stagger(0.05)})
     } else {
-      animate([
-        [
-          ".feature-title",
-          {opacity: 1, x: "0px"},
-          {duration: 0.3, delay: stagger(0.05)}
-        ],
-        [
-          `.visual-${lastFullScreenFeature}`, 
-          {opacity:0, scale:0.8, pointerEvents: "none"}, 
-          {at: "<"}
-        ],
-        [".active-card .gradient", 
-         {opacity: 1, scale: 1},
-         {at: "<"}
-        ],
-        [".active-card", ".show-me-btn",
-         {opacity: 1},
-         {at: "<"}
-        ],
-        [".back-site-btn",
-         {opacity: 0, y: "300px"},
-         {at: "<"}
-       ],     
-      ])
+      animate(".feature-title", {opacity: 1, x: "0px"}, {duration: 0.3, delay: stagger(0.05)})
     }
-  }, [animate, fullScreenFeature, lastFullScreenFeature])
+  }, [fullScreenFeature])
 
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative z-0`}>
@@ -144,14 +97,11 @@ const PortfolioPage = () => {
               )}
               <button 
                   onClick={() => setFullScreenFeature(null)}
-                  className="back-site-btn
-                            fixed bottom-2 left-1/2 -translate-x-1/2 opacity-0 translate-y-[300%]
-                            bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200 z-[50]"
-              >
-                  Back to site
+                  className="fixed bottom-0 left-1/2 -translate-x-1/2 z-10 bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200">
+                  Back to portfolio
               </button>
-            <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e] z-[-1]">
-             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6 leading-relaxed z-0" />
+            <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e]">
+             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6" />
             </div>
             <ul>
               {features.map((feature) => (
