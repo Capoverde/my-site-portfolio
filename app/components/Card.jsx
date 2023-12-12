@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import classNames  from 'classnames'
 import Image from 'next/image';
 import { useFeatureStore } from './store'
 import styles from './portfolio.module.css'
@@ -6,7 +6,7 @@ import styles from './portfolio.module.css'
 const FeatureCard = ({ gradient, children, id }) => {
   
   const inViewFeature = useFeatureStore((state) => state.inViewFeature)
-  const setFullScreenFeature = useFeatureStore((state) => state.fullScreenFeature)
+  const setFullScreenFeature = useFeatureStore((state) => state.setFullScreenFeature)
   
 
   return (
@@ -15,7 +15,7 @@ const FeatureCard = ({ gradient, children, id }) => {
                     inViewFeature === id ? "opacity-100" : "opacity-0"
                     )}>
       { children }
-      <button className='bg-black text-gray-200 rounded-2xl absolute bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg'
+      <button className='bg-black text-gray-200 rounded-3xl absolute bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg'
               onClick={() => setFullScreenFeature(id)}
       >
         Show me
@@ -42,7 +42,7 @@ export const CardProductCatalog = ({ id }) => {
       height={200}
     />
     <Image
-      className="absolute top-[60%] left-[20%] w-[30%] z-[30]"
+      className="absolute top-[40%] left-[10%] w-[50%] z-[30]"
       src="/iphoneTranspBg.png"
       alt="iphone mockup"
       width={200}

@@ -4,7 +4,16 @@ export const useFeatureStore = create((set)=>({
   inViewFeature: null,
   setInViewFeature: (feature) => set({inViewFeature: feature}),
   fullScreenFeature: null,
-  setScreenFeature: (feature) => set({fullScreenFeature: feature}),
-
+  setFullScreenFeature: (feature) => set({fullScreenFeature: feature}),
 }))
 
+// import { create } from 'zustand';
+
+// const useFeatureStore = create((set) => ({
+//   inViewFeature: null,
+//   setInViewFeature: (id) => set({ inViewFeature: id }),
+//   fullScreenFeature: null,
+//   setFullscreenFeature: (id) => set({ fullScreenFeature: id }),
+// }));
+
+// export { useFeatureStore };
