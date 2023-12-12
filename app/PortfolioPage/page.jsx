@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef } from "react";
-import { motion as m, AnimatePresence, useAnimate} from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { motion as m, AnimatePresence, useAnimate, stagger} from "framer-motion";
 import {
   CardProductCatalog,
   WbsitteNext,
@@ -8,6 +8,7 @@ import {
   TheMet,
   Interdom,
 } from "../components/Card";
+import { useFeatureStore, setFullScreenFeature } from "../components/store";
 import { Header } from "../components/Header/Header";
 import { Footer } from '../components/Footer/Footer'
 import { FeaturesTitle } from "../components/FeaturesTitle";
@@ -69,6 +70,16 @@ const layoutVariants = {
 const PortfolioPage = () => {
 
   const [scope, animate] = useAnimate();
+  const fullScreenFeature = useFeatureStore((state) => state.fullScreenFeature);
+  const setFullScreenFeature = useFeatureStore(state => state.setFullScreenFeature);
+
+  useEffect(() => {
+    if(fullScreenFeature) {
+      animate(".feature-title", {opacity: 0, x: "-200px"}, {duration: 0.3, delay: stagger(0.05)})
+    } else {
+      animate(".feature-title", {opacity: 1, x: "0px"}, {duration: 0.3, delay: stagger(0.05)})
+    }
+  }, [fullScreenFeature])
 
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
@@ -77,11 +88,17 @@ const PortfolioPage = () => {
        <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200" />
       </header>
       <main className="min-w-screen min-h-screen  mx-[10%] boder-l border-r border-[#3e3e3e]">
-        <div className="flex w-full h-full items-start border-l border-[#3e3e3e]">
+        <div ref={scope}
+          className="flex w-full h-full items-start border-l border-[#3e3e3e]">
           <div className="w-full py-[50vh] relative">
             {features.map(feature => 
                <feature.visual id={feature.id} key={feature.id}/>
               )}
+              <button 
+                  onClick={() => setFullScreenFeature(null)}
+                  className="fixed bottom-0 left-1/2 -translate-x-1/2 z-10 bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200">
+                  Back to portfolio
+              </button>
             <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e]">
              <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6" />
             </div>
