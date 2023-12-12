@@ -10,11 +10,14 @@ const FeatureCard = ({ gradient, children, id }) => {
   
   return (
     <div className={classNames('absolute inset-0 w-full h-full transition-opacity z-[50]', 
-                    inViewFeature === id ? "active-card opacity-100" : "opacity-0"
+                    inViewFeature === id ? "active-card opacity-100" : "opacity-0 pointer-events-none"
                     )}>
       <div className={classNames("gradient absolute inset-0 bg-gradient-to-br origin-bottom-left", gradient)} />             
        { children }
-      <button className='show-me-btn bg-black text-gray-200 rounded-3xl absolute bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg '
+      <button className='show-me-btn 
+                       bg-black text-gray-200 rounded-3xl 
+                       absolute 
+                       bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg'
               onClick={() => setFullScreenFeature(id)}
       >
         Show project
@@ -24,24 +27,33 @@ const FeatureCard = ({ gradient, children, id }) => {
 }
 
 export const CardProductCatalog = ({ id }) => {
+  const fullScreenFeature = useFeatureStore((state) => state.fullScreenFeature);
+  const isFullScreen = fullScreenFeature === id;
+
   return (
   <FeatureCard className="relative" id={id} gradient="from-[#f7f0ff] to-[#a78afe]">
     <Image
-      className="absolute top-[10%] left-[10%] w-[20%] z-[30]"
+      className={classNames("absolute top-[10%] left-[10%] w-[20%] z-[30] transition-transform",
+                 isFullScreen? "scale-0" : "scale-100"
+                )}
       src="/iphoneTranspBg.png"
       alt="iphone mockup"
       width={200}
       height={200}
     />
     <Image
-      className="absolute top-[20%] left-[70%] w-[25%] z-[30]"
+      className={classNames("absolute top-[20%] left-[70%] w-[25%] z-[30] transition-transform",
+                 isFullScreen? "scale-0" : "scale-100"
+                )}
       src="/iphoneTranspBg.png"
       alt="iphone mockup"
       width={200}
       height={200}
     />
     <Image
-      className="absolute top-[40%] left-[10%] w-[50%] z-[30]"
+      className={classNames("absolute top-[40%] left-[10%] w-[50%] z-[30] transition-transform",
+                 isFullScreen? "scale-0" : "scale-100"
+                )}
       src="/iphoneTranspBg.png"
       alt="iphone mockup"
       width={200}

@@ -60,8 +60,9 @@ const features = [
 ];
 
 const portfolioText = `Checkout Portfolio Project by cliking in the button in the project image on the right.
-                      Here You will find my selected projects in a various tech stacks. 
- `
+                       Here You will find my selected projects in a various tech stacks.
+                       Click the button "batck t site" to toggle the view.
+                      `
 const layoutVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -82,15 +83,15 @@ const PortfolioPage = () => {
         [`visual-${lastFullScreenFeature}`, {opacity: 1, scale: 1, pointerEvemts: "auto"}, {at:"<"}],
         [".active-card .gradient", {oapcity: 0, scale: 0}, {at:"<"}],
         [".active-card .show-me-btn", {opacity: 0}, {at:"<"}], 
-        [".back-to-site-btn", {opacity: 1, y: "0px"}, {at:"<"}]
+        [".back-to-site-btn", {opacity: 1, y: "0px"}, {at:"<", duration: 0.3}]
       ])
     } else {
       animate([
         [".feature-title", {opacity: 1, x: "0px"}, {duration: 0.3, delay: stagger(0.05)}],
         [`visual-${fullScreenFeature}`, {opacity: 0, scale: 0.75, pointerEvemts: "none"}, {at:"<"}],
         [".active-card .gradient", {oapcity: 1, scale: 1}, {at:"<"}],
-        [".active-card .show-me-btn", {opacity: 1}, {at:"<"}], 
-        [".back-to-site-btn", {opacity: 0, y: "300px"}, {at:"<"}]
+        [".back-to-site-btn", {opacity: 0, y: "300px"}, {at:"<", duration: 0.3}],
+        [".active-card .show-me-btn", {opacity: 1}]
       ])
     }
   }, [fullScreenFeature])
