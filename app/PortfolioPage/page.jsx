@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { motion as m, AnimatePresence, useInView } from "framer-motion";
+import { motion as m, AnimatePresence, useAnimate} from "framer-motion";
 import {
   CardProductCatalog,
   WbsitteNext,
@@ -68,19 +68,8 @@ const layoutVariants = {
 
 const PortfolioPage = () => {
 
-  const body = useRef(null);
-  const isInView = useInView(body, {once: true, margin: "-75%"})
+  const [scope, animate] = useAnimate();
 
-
-  const animation = {
-    initial: {y: "100%"},
-    enter: i => ({y: "0", transition: {duration: 0.75, ease: [0.33, 1, 0.68, 1],  delay: 0.075 * i}})
-  }
-
-  const phrases =[
-    'Portfolio',
-  ]
-  
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
       <Header />
