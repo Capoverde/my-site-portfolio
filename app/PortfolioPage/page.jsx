@@ -72,13 +72,26 @@ const PortfolioPage = () => {
 
   const [scope, animate] = useAnimate();
   const fullScreenFeature = useFeatureStore((state) => state.fullScreenFeature);
+  const lastFullScreenFeature = useFeatureStore((state) => state.lastFullScreenFeature);
   const setFullScreenFeature = useFeatureStore(state => state.setFullScreenFeature);
 
   useEffect(() => {
     if(fullScreenFeature) {
-      animate(".feature-title", {opacity: 0, x: "-200px"}, {duration: 0.3, delay: stagger(0.05)})
+      animate([
+        [".feature-title", {opacity: 0, x: "-200px"}, {duration: 0.3, delay: stagger(0.05)}],
+        [`visual-${lastFullScreenFeature}`, {opacity: 1, scale: 1, pointerEvemts: "auto"}, {at:"<"}],
+        [".active-card .gradient", {oapcity: 0, scale: 0}, {at:"<"}],
+        [".active-card .show-me-btn", {opacity: 0}, {at:"<"}], 
+        [".back-to-site-btn", {opacity: 1, y: "0px"}, {at:"<"}]
+      ])
     } else {
-      animate(".feature-title", {opacity: 1, x: "0px"}, {duration: 0.3, delay: stagger(0.05)})
+      animate([
+        [".feature-title", {opacity: 1, x: "0px"}, {duration: 0.3, delay: stagger(0.05)}],
+        [`visual-${fullScreenFeature}`, {opacity: 0, scale: 0.75, pointerEvemts: "none"}, {at:"<"}],
+        [".active-card .gradient", {oapcity: 1, scale: 1}, {at:"<"}],
+        [".active-card .show-me-btn", {opacity: 1}, {at:"<"}], 
+        [".back-to-site-btn", {opacity: 0, y: "300px"}, {at:"<"}]
+      ])
     }
   }, [fullScreenFeature])
 
@@ -97,11 +110,15 @@ const PortfolioPage = () => {
               )}
               <button 
                   onClick={() => setFullScreenFeature(null)}
-                  className="fixed bottom-0 left-1/2 -translate-x-1/2 z-10 bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200">
+                  className="back-to-site-btn
+                             fixed bottom-0 left-1/2 -translate-x-1/2 translate-y-[300%] 
+                           bg-black rounded-full px-8 py-4 mb-4 border-gray-700 text-gray-200
+                             shadow-lg opacity-0 z-10"
+              >
                   Back to portfolio
               </button>
-            <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e]">
-             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6" />
+            <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e] z-[-1]">
+             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6 " />
             </div>
             <ul>
               {features.map((feature) => (

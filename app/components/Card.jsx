@@ -13,11 +13,11 @@ const FeatureCard = ({ gradient, children, id }) => {
                     inViewFeature === id ? "active-card opacity-100" : "opacity-0"
                     )}>
       <div className={classNames("gradient absolute inset-0 bg-gradient-to-br origin-bottom-left", gradient)} />             
-      { children }
+       { children }
       <button className='show-me-btn bg-black text-gray-200 rounded-3xl absolute bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg '
               onClick={() => setFullScreenFeature(id)}
       >
-        Show me
+        Show project
       </button>
     </div>
   )
