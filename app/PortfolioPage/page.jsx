@@ -59,8 +59,8 @@ const features = [
 ];
 
 const portfolioText = `Checkout Portfolio Project by cliking in the button in the project image on the right.
-                      Here You will find my selected projects in a various tech stacks. 
- `
+                      Here You will find my selected projects in a various tech stacks.
+                      You can toggle a view back by clicking on the "back to portfolio button" on the bottom of the page.`
 const layoutVariants = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -72,14 +72,36 @@ const PortfolioPage = () => {
   const [scope, animate] = useAnimate();
   const fullScreenFeature = useFeatureStore((state) => state.fullScreenFeature);
   const setFullScreenFeature = useFeatureStore(state => state.setFullScreenFeature);
+  const lastFullScreenFeature = useFeatureStore(state => state.lastFullScreenFeature);
+
 
   useEffect(() => {
     if(fullScreenFeature) {
-      animate(".feature-title", {opacity: 0, x: "-200px"}, {duration: 0.3, delay: stagger(0.05)})
+      animate([
+        [".feature-title", 
+         {opacity: 0, x: "-200px"}, 
+         {duration: 0.3, delay: stagger(0.05)}
+        ],
+        [
+          `.visual-${lastFullScreenFeature}`, 
+          {opacity:1, scale:1, pointerEvents: "auto"}, 
+
+        ]
+      ])
     } else {
-      animate(".feature-title", {opacity: 1, x: "0px"}, {duration: 0.3, delay: stagger(0.05)})
+      animate([
+        [
+          ".feature-title",
+          {opacity: 1, x: "0px"},
+          {duration: 0.3, delay: stagger(0.05)}
+        ],
+        [
+          `.visual-${lastFullScreenFeature}`, 
+          {opacity:0, scale:0.8, pointerEvents: "none"}, 
+        ]
+      ])
     }
-  }, [fullScreenFeature])
+  }, [animate, fullScreenFeature, lastFullScreenFeature])
 
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
@@ -96,11 +118,12 @@ const PortfolioPage = () => {
               )}
               <button 
                   onClick={() => setFullScreenFeature(null)}
-                  className="fixed bottom-0 left-1/2 -translate-x-1/2 z-10 bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200">
+                  className="fixed bottom-2 left-1/2 -translate-x-1/2 z-10 bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200"
+              >
                   Back to portfolio
               </button>
             <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e]">
-             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6" />
+             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6 leading-relaxed" />
             </div>
             <ul>
               {features.map((feature) => (
