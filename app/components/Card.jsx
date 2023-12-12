@@ -1,4 +1,5 @@
-import classNames  from 'classnames'
+import React, { useEffect} from 'react';
+import classNames  from 'classnames';
 import Image from 'next/image';
 import { useFeatureStore } from './store'
 import styles from './portfolio.module.css'
@@ -18,7 +19,7 @@ const FeatureCard = ({ gradient, children, id }) => {
                        bg-black text-gray-200 rounded-3xl 
                        absolute 
                        bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg'
-              onClick={() => setFullScreenFeature(id)}
+              onClick={()=> setFullScreenFeature(id)}
       >
         Show project
       </button>
