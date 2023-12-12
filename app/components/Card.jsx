@@ -8,14 +8,13 @@ const FeatureCard = ({ gradient, children, id }) => {
   const inViewFeature = useFeatureStore((state) => state.inViewFeature)
   const setFullScreenFeature = useFeatureStore((state) => state.setFullScreenFeature)
   
-
   return (
-    <div className={classNames('absolute inset-0 w-full h-full bg-gray-700 bg-gradient-to-br transition-opacity',
-                    gradient, 
-                    inViewFeature === id ? "opacity-100" : "opacity-0"
+    <div className={classNames('absolute inset-0 w-full h-full transition-opacity z-[50]', 
+                    inViewFeature === id ? "active-card opacity-100" : "opacity-0"
                     )}>
+      <div className={classNames("gradient absolute inset-0 bg-gradient-to-br origin-bottom-left", gradient)} />             
       { children }
-      <button className='bg-black text-gray-200 rounded-3xl absolute bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg'
+      <button className='show-me-btn bg-black text-gray-200 rounded-3xl absolute bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg '
               onClick={() => setFullScreenFeature(id)}
       >
         Show me
@@ -48,9 +47,7 @@ export const CardProductCatalog = ({ id }) => {
       width={200}
       height={200}
     />
-    <div className={`${styles.cardDiv} absolute inset-0`}>
-
-    </div>
+    <div className={`${styles.cardDiv} absolute inset-0`}></div>
   </FeatureCard>
   )
 }

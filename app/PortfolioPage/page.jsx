@@ -16,6 +16,7 @@ import { AnimatedHeader } from "../components/AnimatedText/AnimatedHeader";
 import { AnimatedP } from "../components/AnimatedText/AnimatedP";
 import { OtherVisual, PortfolioVisual } from "../components/Visual";
 import styles from "./PortfolioPage.module.css";
+import classNames from "classnames";
 
 
 const features = [
@@ -85,8 +86,20 @@ const PortfolioPage = () => {
         [
           `.visual-${lastFullScreenFeature}`, 
           {opacity:1, scale:1, pointerEvents: "auto"}, 
-
-        ]
+          {at: "<"}
+        ],
+        [".active-card .gradient", 
+         {opacity: 0, scale:0},
+         {at: "<"}
+        ],
+        [".active-card", ".show-me-btn",
+         {opacity: 0},
+         {at: "<"}
+        ],
+        [".back-site-btn",
+         {opacity: 1, y: "0px"},
+         {at: "<"}
+        ],
       ])
     } else {
       animate([
@@ -98,16 +111,29 @@ const PortfolioPage = () => {
         [
           `.visual-${lastFullScreenFeature}`, 
           {opacity:0, scale:0.8, pointerEvents: "none"}, 
-        ]
+          {at: "<"}
+        ],
+        [".active-card .gradient", 
+         {opacity: 1, scale: 1},
+         {at: "<"}
+        ],
+        [".active-card", ".show-me-btn",
+         {opacity: 1},
+         {at: "<"}
+        ],
+        [".back-site-btn",
+         {opacity: 0, y: "300px"},
+         {at: "<"}
+       ],     
       ])
     }
   }, [animate, fullScreenFeature, lastFullScreenFeature])
 
   return (
-    <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative`}>
+    <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative z-0`}>
       <Header />
       <header className="Portfolio__header pl-6 mx-[10%] border-b border-l border-r border-[#3e3e3e] ">
-       <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200" />
+       <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200 " />
       </header>
       <main className="min-w-screen min-h-screen  mx-[10%] boder-l border-r border-[#3e3e3e]">
         <div ref={scope}
@@ -118,12 +144,14 @@ const PortfolioPage = () => {
               )}
               <button 
                   onClick={() => setFullScreenFeature(null)}
-                  className="fixed bottom-2 left-1/2 -translate-x-1/2 z-10 bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200"
+                  className="back-site-btn
+                            fixed bottom-2 left-1/2 -translate-x-1/2 opacity-0 translate-y-[300%]
+                            bg-black rounded-full px-8 py-4 border-gray-700 text-gray-200 z-[50]"
               >
-                  Back to portfolio
+                  Back to site
               </button>
-            <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e]">
-             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6 leading-relaxed" />
+            <div className="h-[200px] w-full absolute top-0 text-gray-300 border-b border-[#3e3e3e] z-[-1]">
+             <AnimatedP text={portfolioText} className="py-4 text-gray-300 px-6 leading-relaxed z-0" />
             </div>
             <ul>
               {features.map((feature) => (
@@ -138,8 +166,10 @@ const PortfolioPage = () => {
               ))}
             </ul>
           </div>
-          <div className="w-full sticky top-0 flex h-screen items-center border-l border-[#3e3e3e]">
-            <div className="relative w-full aspect-square bg-gray-400">
+          <div className={classNames("w-full sticky top-0 flex h-screen items-center border-l border-[#3e3e3e]")}>
+            <div 
+             className="relative w-full aspect-square [&:has(>_.active-card)]:bg-transparent"
+            >
               <AnimatePresence exitBeforeEnter={false} mode="wait">
                 <m.div
                   key={features.map((feature) => feature.id).join("-")}
