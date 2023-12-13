@@ -2,7 +2,7 @@ import React, { useEffect} from 'react';
 import classNames  from 'classnames';
 import Image from 'next/image';
 import { useFeatureStore } from './store'
-import styles from './portfolio.module.css'
+import styles from '../PortfolioPage/PortfolioPage.module.css'
 
 const FeatureCard = ({ gradient, children, id }) => {
   
@@ -27,12 +27,12 @@ const FeatureCard = ({ gradient, children, id }) => {
   )
 }
 
-export const CardProductCatalog = ({ id }) => {
+export const TodoApp = ({ id }) => {
   const fullScreenFeature = useFeatureStore((state) => state.fullScreenFeature);
   const isFullScreen = fullScreenFeature === id;
 
   return (
-  <FeatureCard className="relative" id={id} gradient="from-[#f7f0ff] to-[#a78afe]">
+  <FeatureCard className="relative" id={id} gradient="from-[#f7f0ff] to-[#090979]">
     <Image
       className={classNames("absolute top-[10%] left-[10%] w-[20%] z-[30] transition-transform",
                  isFullScreen? "scale-0" : "scale-100"
@@ -68,31 +68,32 @@ export const CardProductCatalog = ({ id }) => {
 export const WbsitteNext = ({ id  }) => {
   return (
     <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addef]">
-    <span/>
-  </FeatureCard>
+     <span/>
+    </FeatureCard>
   )
 }
 
 export const EventHorizon = ({ id }) => {
   return (
     <FeatureCard id={id} gradient="from-[#f5fff7] to-[#adf8ff]">
-    <span/>
-  </FeatureCard>
+     <span/>
+    </FeatureCard>
   )
 }
 
 export const TheMet = ({ id }) => {
   return (
-    <FeatureCard id={id} gradient="from-[#f7f0ff] to-[#a78afe]">
-    <span/>
-  </FeatureCard>
+    <FeatureCard id={id} gradient="from-[#090979] to-[#a78afe]">
+     <span/>
+    </FeatureCard>
   )
 }
 
 export const Interdom = ({ id }) => {
   return (
-    <FeatureCard id={id} gradient="from-[#f7f0ff] to-[#a78afe]">
-    <span/>
-  </FeatureCard>
+    <FeatureCard id={id} gradient="from-[#090979] to-[#a78afe]">
+     <span/>
+    </FeatureCard>
   )
 }
+

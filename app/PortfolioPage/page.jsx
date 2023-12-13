@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion as m, AnimatePresence, useAnimate, stagger} from "framer-motion";
 import {
-  CardProductCatalog,
+  TodoApp,
   WbsitteNext,
   EventHorizon,
   TheMet,
@@ -14,7 +15,11 @@ import { Footer } from '../components/Footer/Footer'
 import { FeaturesTitle } from "../components/FeaturesTitle";
 import { AnimatedHeader } from "../components/AnimatedText/AnimatedHeader";
 import { AnimatedP } from "../components/AnimatedText/AnimatedP";
-import { OtherVisual, PortfolioVisual } from "../components/Visual";
+import { OtherVisual, 
+         PortfolioVisual,
+         ThirdVisual,
+         TodoVisual } from "../components/Visual";
+import { BackgroundBlob } from "../components/Blobs/Blobs";
 import styles from "./PortfolioPage.module.css";
 import classNames from "classnames";
 
@@ -24,38 +29,41 @@ const features = [
     title: "FullStack ToDo Applicaton",
     describe: "application with cool features",
     id: "to-do-app",
-    card: CardProductCatalog,
-    visual: OtherVisual
+    card: TodoApp,
+    visual: TodoVisual,
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/"
   },
   {
     title: "FullStack product catalog store",
     id: "product-catalog",
     describe: "application with cool features",
     card: WbsitteNext,
-    visual: OtherVisual
-
+    visual: ThirdVisual,
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/"
   },
   {
     title: "Website in Next.js",
     id: "lawyers-ebsite",
     describe: "application with cool features",
     card: EventHorizon,
-    visual: PortfolioVisual
+    visual: PortfolioVisual,
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/"
   },
   {
     title: "The Event Horizon",
     id: "website and gallery",
     describe: "application with cool features",
     card: TheMet,
-    visual: OtherVisual
+    visual: OtherVisual,
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/"
   },
   {
     title: "The Met",
     id: "museum-website",
     describe: "application with cool features",
     card: Interdom,
-    visual: OtherVisual
-
+    visual: OtherVisual,
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/"
   },
 ];
 
@@ -80,7 +88,8 @@ const PortfolioPage = () => {
     if(fullScreenFeature) {
       animate([
         [".feature-title", {opacity: 0, x: "-200px"}, {duration: 0.3, delay: stagger(0.05)}],
-        [`visual-${lastFullScreenFeature}`, {opacity: 1, scale: 1, pointerEvemts: "auto"}, {at:"<"}],
+        [`visual-${lastFullScreenFeature}`, {opacity: 1, scale: 1, pointerEvemts: "auto"},
+         {at:"<"}],
         [".active-card .gradient", {oapcity: 0, scale: 0}, {at:"<"}],
         [".active-card .show-me-btn", {opacity: 0}, {at:"<"}], 
         [".back-to-site-btn", {opacity: 1, y: "0px"}, {at:"<", duration: 0.3}]
@@ -99,6 +108,7 @@ const PortfolioPage = () => {
   return (
     <div className={`${styles.fadeIn} w-screen h-screen puff-in-center relative z-0`}>
       <Header />
+      <BackgroundBlob />
       <header className="Portfolio__header pl-6 mx-[10%] border-b border-l border-r border-[#3e3e3e] ">
        <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200 " />
       </header>
@@ -107,7 +117,7 @@ const PortfolioPage = () => {
           className="flex w-full h-full items-start border-l border-[#3e3e3e]">
           <div className="w-full py-[50vh] relative">
             {features.map(feature => 
-               <feature.visual id={feature.id} key={feature.id}/>
+               <feature.visual id={feature.id}  projectLink={feature.projectLink} key={feature.id}/>
               )}
               <button 
                   onClick={() => setFullScreenFeature(null)}
