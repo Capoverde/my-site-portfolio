@@ -10,7 +10,7 @@ const FeatureCard = ({ gradient, children, id }) => {
   const setFullScreenFeature = useFeatureStore((state) => state.setFullScreenFeature)
   
   return (
-    <div className={classNames('absolute inset-0 w-full h-full transition-opacity z-[50]', 
+    <div className={classNames('absolute inset-0 w-full h-full transition-opacity ', 
                     inViewFeature === id ? "active-card opacity-100" : "opacity-0 pointer-events-none"
                     )}>
       <div className={classNames("gradient absolute inset-0 bg-gradient-to-br origin-bottom-left", gradient)} />             
