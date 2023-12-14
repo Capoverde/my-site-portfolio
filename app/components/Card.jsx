@@ -65,7 +65,7 @@ export const TodoApp = ({ id }) => {
   )
 }
 
-export const WbsitteNext = ({ id  }) => {
+export const WebsiteNext = ({ id  }) => {
   return (
     <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addef]">
      <span/>
@@ -89,7 +89,7 @@ export const TheMet = ({ id }) => {
   )
 }
 
-export const Interdom = ({ id }) => {
+export const Nothing = ({ id }) => {
   return (
     <FeatureCard id={id} gradient="from-[#090979] to-[#a78afe]">
      <span/>
