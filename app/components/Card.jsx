@@ -8,7 +8,12 @@ const FeatureCard = ({ gradient, children, id }) => {
   
   const inViewFeature = useFeatureStore((state) => state.inViewFeature)
   const setFullScreenFeature = useFeatureStore((state) => state.setFullScreenFeature)
-  
+
+  const blockScroll = () => {
+    // Zablokuj przewijanie strony
+    document.body.style.overflow = 'hidden';
+  };
+
   return (
     <div className={classNames('absolute inset-0 w-full h-full transition-opacity ', 
                     inViewFeature === id ? "active-card opacity-100" : "opacity-0 pointer-events-none"
@@ -19,7 +24,10 @@ const FeatureCard = ({ gradient, children, id }) => {
                        bg-black text-gray-200 rounded-3xl 
                        absolute 
                        bottom-6 right-6 px-8 py-2 border border-gray-700 shadow-lg'
-              onClick={()=> setFullScreenFeature(id)}
+                       onClick={() => {
+                        setFullScreenFeature(id);
+                        blockScroll(); // Po kliknięciu zablokuj przewijanie
+                      }}
       >
         Show project
       </button>

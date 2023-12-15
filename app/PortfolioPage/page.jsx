@@ -91,6 +91,10 @@ const PortfolioPage = () => {
   const lastFullScreenFeature = useFeatureStore((state) => state.lastFullScreenFeature);
   const setFullScreenFeature = useFeatureStore(state => state.setFullScreenFeature);
   
+  const unblockScroll = () => {
+    // Odblokuj przewijanie strony
+    document.body.style.overflow = 'visible';
+  };
 
   useEffect(() => {
     if(fullScreenFeature) {
@@ -134,7 +138,9 @@ const PortfolioPage = () => {
                />
             )} 
               <button 
-                  onClick={() => setFullScreenFeature(null)}
+                  onClick={() => {setFullScreenFeature(null)
+                                 unblockScroll();
+                  }}
               
                   className="back-to-site-btn
                              fixed bottom-0 left-1/2 
