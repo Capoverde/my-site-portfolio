@@ -19,7 +19,7 @@ import { OtherVisual,
          PortfolioVisual,
          ThirdVisual,
          TodoVisual,
-         NothingVisual } from "../components/Visual";
+         NothingVisual } from "../components/Visual/Visual";
 import { VscGithub } from "react-icons/vsc";
 import { BsGlobe2 } from "react-icons/bs";       
 import { BackgroundBlob } from "../components/Blobs/Blobs";
@@ -139,7 +139,7 @@ const PortfolioPage = () => {
                   className="back-to-site-btn
                              fixed bottom-0 left-1/2 
                              translate-y-[300%] 
-                           bg-black rounded-full px-8 py-4 mb-4 border-gray-700 text-gray-200
+                           bg-black rounded-full px-8 py-4 mb-12 border border-gray-200 text-gray-200
                              shadow-lg opacity-0 z-10"
               >
                 

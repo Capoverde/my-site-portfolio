@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import classNames from 'classnames';
-import { useFeatureStore } from './store';
+import { useFeatureStore } from '../store';
+import styles from './Visual.module.css';
 
 export const Visual = ({ children, id }) => {
   const fullScreenFeature = useFeatureStore((state) => state.fullScreenFeature);
@@ -9,13 +10,12 @@ return (
   <div className={classNames("fixed inset-0 flex items-center justify-center transition-opacity duration-500",
                              fullScreenFeature === id ? "opacity-100" : "opacity-0 "
                              )}>
-      {/* <div className='flex justify-center items-center 
+      <div className={`${styles.Visual} flex justify-center items-center 
                       w-screen h-screen px-4 py-auto
-                      bg-black
-                      relative'
-      > */}
+                      relative`}
+      >
         {children}
-      {/* </div> */}
+      </div>
   </div>
  );
 };
