@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion as m } from 'framer-motion';
+import { motion as m, useInView } from 'framer-motion';
 
 const defaultAnimations = {
   hidden: { opacity: 0, y: 40 },
@@ -12,10 +12,14 @@ export const AnimatedHeader = ({
   el: Wrapper = "h2",
   className,
 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {amount: 0.5, once: true});
+
   return (
     <div>
       <Wrapper className={className}>
         <m.span
+          ref={ref}
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.09 }}

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import classNames from 'classnames';
 import { useFeatureStore } from './store';
 
@@ -22,11 +21,11 @@ return (
 };
 
 
-export const PortfolioVisual = ({id }) => {
+export const PortfolioVisual = ({id}) => {
   return (
     <Visual id={id} >
        <Image 
-        alt="todoBg.jpg"
+        alt="todoViewsBG.png"
         src="/todoBg.png"
         width={1000}
         height={1000}
@@ -40,7 +39,7 @@ export const OtherVisual = ({id}) => {
       <Visual id={id}>
         <Image 
          alt="todoBg.png"
-         src="/Ja4.png"
+         src="/EventHorizon.png"
          width={1000}
          height={1000}
         />
@@ -48,20 +47,20 @@ export const OtherVisual = ({id}) => {
     )
   }
 
-  export const ThirdVisual = ({id }) => {
+  export const ThirdVisual = ({id}) => {
     return (
       <Visual id={id}>
         <Image 
          alt="logoDiv.png"
-         src="/logoDivBg.jpg"
-         width={1000}
+         src="/todoViewsBG.png"
+         width={1800}
          height={1000}
         />
       </Visual>
     )
   }
 
-  export const TodoVisual = ({id }) => {
+  export const TodoVisual = ({id}) => {
     return (
       <Visual id={id}>
         <Image 
@@ -75,7 +74,7 @@ export const OtherVisual = ({id}) => {
     )
   }
 
-  export const NothingVisual = ({id }) => {
+  export const NothingVisual = ({id}) => {
     return (
       <Visual id={id}>
         <Image 

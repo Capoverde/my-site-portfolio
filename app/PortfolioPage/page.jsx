@@ -20,6 +20,8 @@ import { OtherVisual,
          ThirdVisual,
          TodoVisual,
          NothingVisual } from "../components/Visual";
+import { VscGithub } from "react-icons/vsc";
+import { BsGlobe2 } from "react-icons/bs";       
 import { BackgroundBlob } from "../components/Blobs/Blobs";
 import styles from "./PortfolioPage.module.css";
 import classNames from "classnames";
@@ -32,7 +34,8 @@ const features = [
     id: "to-do-app",
     card: TodoApp,
     visual: TodoVisual,
-    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/"
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/",
+    codeLink: "https://github.com/Capoverde"
   },
   {
     title: "FullStack product catalog store",
@@ -40,7 +43,8 @@ const features = [
     describe: "The FullStack Online Store project, centered around iPhones and iPads, demonstrates the fusion of React.js and Typescript to deliver a sophisticated and responsive e-commerce platform. This project showcases the versatility of React and the reliability of Typescript, ensuring a seamless user experience for online shopping with Apple devices.",
     card: WebsiteNext,
     visual: ThirdVisual,
-    projectLink: "https://pl-fe-may23-codecrusaders.github.io/product_catalog/"
+    projectLink: "https://pl-fe-may23-codecrusaders.github.io/product_catalog/",
+    codeLink: "https://github.com/Capoverde"
   },
   {
     title: "Website in Next.js",
@@ -48,7 +52,8 @@ const features = [
     describe: "A website for a friendly law firm, built with Next.js",
     card: EventHorizon,
     visual: PortfolioVisual,
-    projectLink: "https://anna-kopczynska.vercel.app/"
+    projectLink: "https://anna-kopczynska.vercel.app/",
+    codeLink: "https://github.com/Capoverde"
   },
   {
     title: "The Event Horizon",
@@ -56,7 +61,8 @@ const features = [
     describe: "application with cool features",
     card: TheMet,
     visual: OtherVisual,
-    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/"
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/",
+    codeLink: "https://github.com/Capoverde"
   },
   {
     title: "Nothing",
@@ -64,7 +70,8 @@ const features = [
     describe: "The landing page for 'Nothing Phone' is a minimalist showcase crafted entirely with HTML, CSS, and JavaScript. It features a clean and modern design, reflecting the simplicity and elegance of the product. Through seamless interactivity and smooth animations, users are introduced to the unique features of the 'Nothing Phone in an engaging and user-friendly manner.",
     card: Nothing,
     visual: NothingVisual,
-    projectLink: "https://capoverde.github.io/layout_miami/"
+    projectLink: "https://capoverde.github.io/layout_miami/",
+    codeLink: "https://github.com/Capoverde"
   },
 ];
 
@@ -111,7 +118,10 @@ const PortfolioPage = () => {
       <Header />
       <BackgroundBlob />
       <header className="Portfolio__header pl-6 mx-[10%] border-b border-l border-r border-[#3e3e3e] ">
-       <AnimatedHeader text="Portfolio" className="title font-bold text-[6rem] text-gray-200 " />
+       <AnimatedHeader
+        text="Portfolio"
+        className="title font-bold text-[6rem] text-gray-200 " 
+       />
       </header>
       <main className="min-w-screen min-h-screen  mx-[10%] boder-l border-r border-[#3e3e3e]">
         <div ref={scope}
@@ -141,16 +151,21 @@ const PortfolioPage = () => {
              {features.map((feature) => (
                <li
                 key={feature.id}
-                className="border-b  border-[#3e3e3e] px-6 flex flex-col"
+                className="border-b  border-[#3e3e3e] px-6 flex flex-col 
+                           overflow-hidden
+                          "
                >
                  <FeaturesTitle id={feature.id}>
-                   <span className="inline-block">{feature.title}</span>
-                   <p className="py-6 text-[1rem] font-thin leading-relaxed ">
-                     {feature.describe}
-                   </p>
+                   <AnimatedHeader text ={feature.title} />
+                   <AnimatedP 
+                     text={feature.describe} 
+                     className="py-6 text-gray-300 text-[1rem] font-thin leading-relaxed " 
+                   />
+                   <div className="flex w-full">
                    <Link href={feature.projectLink || '#'}
                      target="_blank"
                      className="
+                      flex
                       text-[1rem]
                       bg-transparent text-gray-700 
                       font-normal hover:text-gray-900 hover:bg-gray-200
@@ -159,9 +174,27 @@ const PortfolioPage = () => {
                       shadow-lg rounded-full 
                       px-8 py-4 z-[100] cursor-pointer
                      "
-                     >
-                       Visit the project
+                   >
+                    <BsGlobe2 />
+                      <span className="ml-3">Visit the project</span> 
                    </Link>
+                   <Link href={feature.codeLink || '#'}
+                     target="_blank"
+                     className="
+                      flex
+                      text-[1rem] ml-6
+                      bg-transparent text-gray-700 
+                      font-normal hover:text-gray-900 hover:bg-gray-200
+                      transition-all
+                      border border-[#3e3e3e] 
+                      shadow-lg rounded-full 
+                      px-8 py-4 z-[100] cursor-pointer
+                     "
+                   >
+                    <VscGithub />
+                      <span className="ml-3">View the code</span> 
+                   </Link>                   
+                   </div>
                  </FeaturesTitle>
                </li>
              ))}

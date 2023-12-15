@@ -60,7 +60,7 @@ export const TodoApp = ({ id }) => {
       width={200}
       height={200}
     />
-    <div className={`${styles.cardDiv} absolute inset-0`}></div>
+    {/* <div className={`${styles.cardDiv} absolute inset-0`}></div> */}
   </FeatureCard>
   )
 }

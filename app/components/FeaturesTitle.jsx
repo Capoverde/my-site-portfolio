@@ -16,10 +16,10 @@ export const FeaturesTitle = ({ children, id }) => {
    }, [isInView, id, setInViewFeature])
 
   return (
-    <p ref={ref} className={classNames("feature-title text-5xl font-extrabold py-16 transition-colors",
+    <h3 ref={ref} className={classNames("feature-title text-5xl font-extrabold py-16 transition-colors",
                                        isInView ? "text-gray-200" : "text-gray-500" 
                             )}>
                 {children}
-    </p>
+    </h3>
   )
 }

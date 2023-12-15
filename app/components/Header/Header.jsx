@@ -20,17 +20,17 @@ export const Header = () => {
   <div
     className={`${styles.logoBox} flex justify-center items-center h-[50px] border-l border-r border-[#3e3e3e] w-[10%]`}
   >
-    <Link href="/" className="block">
+    <Link href="/" className="block z-[30]">
       <span className="font-extrabold ">DEV.</span>
     </Link>
   </div>
   <Link href='https://github.com/Capoverde'
         title='GitHub'
         target="_blank" 
-        className="flex justify-center items-center h-[50px] border-r border-[#3e3e3e] w-[4%] z=[30]">
+        className="flex justify-center items-center h-[50px] border-r border-[#3e3e3e] w-[4%] z-[30]">
     <VscGithubAlt />
   </Link>
-  <Link href="/ContactPage" className="grow self-center flex justify-center">
+  <Link href="/ContactPage" className="grow self-center flex justify-center z-[30]">
     <span className="contact inline-block">
       cont<strong>@</strong>ct
     </span>
@@ -41,7 +41,7 @@ export const Header = () => {
         className="flex justify-center items-center h-[50px] border-l border-[#3e3e3e] w-[4%] z-[30]">
     <RiFacebookLine />
   </Link>
-  <div className="hamburgerBox h-full border-r border-l border-[#3e3e3e] flex justify-center w-[10%]">
+  <div className="hamburgerBox h-full border-r border-l border-[#3e3e3e] flex justify-center w-[10%] z-[30]">
     <Hamburger
       className={`${styles.Hamburger}  sticky `}
       toggled={isOpen}
