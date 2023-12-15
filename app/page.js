@@ -23,6 +23,8 @@ export default function Home() {
     setIsHovered(false);
   };
 
+  const pdfUrl = `/Resume_Piotr_Slobinski.pdf`;
+
   return (
     <div className={`${styles.fadeIn}`}>
       <Header />
@@ -147,7 +149,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 1 }}
               className=" z-[50]"
             >
-             <NavLinks href="/AboutPage" number="01" title="Skills" className="text-gray-400 " />
+             <NavLinks 
+              href="/AboutPage" 
+              number="01" 
+              title="Skills" 
+              className="text-gray-400 " />
             </m.div>
             <m.div
               initial={{ y: 20, opacity: 0 }}
@@ -155,11 +161,10 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 2 }}
               className=" z-[50]"
             >
-             <NavLinks href="/"
+             <NavLinks href={pdfUrl}
                        number="02" 
                        title="Resume" 
                        className="text-gray-500"
-                      //  onClick={downloadPdf}
                        />
             </m.div>
             <m.div
@@ -168,7 +173,10 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 3 }}
               className=" z-[50]"
             >
-             <NavLinks href="/" number="03" title="Portfolio" className="text-gray-600 border-b border-[#3e3e3e]" />
+             <NavLinks href="/PortfolioPage"
+                       number="03"
+                       title="Portfolio"
+                       className="text-gray-600 border-b border-[#3e3e3e]" />
             </m.div>
           </div>  
           <m.div

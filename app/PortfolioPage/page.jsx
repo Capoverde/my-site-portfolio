@@ -138,8 +138,9 @@ const PortfolioPage = () => {
               
                   className="back-to-site-btn
                              fixed bottom-0 left-1/2 
-                             translate-y-[300%] 
-                           bg-black rounded-full px-8 py-4 mb-12 border border-gray-200 text-gray-200
+                             translate-y-[300%] transiiton-all duration-500
+                           bg-black rounded-full px-8 py-2 mb-12 border border-gray-200 text-gray-200
+                           hover:text-gray-900 hover:bg-gray-200
                              shadow-lg opacity-0 z-10"
               >
                 
@@ -170,14 +171,14 @@ const PortfolioPage = () => {
                       text-[1rem]
                       bg-transparent text-gray-700 
                       font-normal hover:text-gray-900 hover:bg-gray-200
-                      transition-all
+                      transition-all duration-500
                       border border-[#3e3e3e] 
                       shadow-lg rounded-full 
-                      px-8 py-4 z-[100] cursor-pointer
+                      px-8 py-3 z-[100] cursor-pointer
                      "
                    >
                     <BsGlobe2 />
-                      <span className="ml-3">Visit the project</span> 
+                      <span className={`${styles.VisitProjectBtn} ml-3`}>Visit the project</span> 
                    </Link>
                    <Link href={feature.codeLink || '#'}
                      target="_blank"
@@ -186,10 +187,10 @@ const PortfolioPage = () => {
                       text-[1rem] ml-6
                       bg-transparent text-gray-700 
                       font-normal hover:text-gray-900 hover:bg-gray-200
-                      transition-all
+                      transition-all duration-500
                       border border-[#3e3e3e] 
                       shadow-lg rounded-full 
-                      px-8 py-4 z-[100] cursor-pointer
+                      px-8 py-3 z-[100] cursor-pointer
                      "
                    >
                     <VscGithub />
