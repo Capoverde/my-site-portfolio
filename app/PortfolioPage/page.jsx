@@ -29,21 +29,21 @@ import classNames from "classnames";
 
 const features = [
   {
-    title: "FullStack ToDo Applicaton",
-    describe: "The FullStack ToDo Application, developed using React.js and Typescript, offers a seamless blend of a modern UI and powerful functionality. It showcases the effectiveness of React.js and the reliability of Typescript for creating dynamic and scalable web solutions with an intuitive task management experience.",
-    id: "to-do-app",
-    card: TodoApp,
-    visual: TodoVisual,
-    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/",
-    codeLink: "https://github.com/Capoverde"
-  },
-  {
     title: "FullStack product catalog store",
     id: "product-catalog",
     describe: "The FullStack Online Store project, centered around iPhones and iPads, demonstrates the fusion of React.js and Typescript to deliver a sophisticated and responsive e-commerce platform. This project showcases the versatility of React and the reliability of Typescript, ensuring a seamless user experience for online shopping with Apple devices.",
     card: WebsiteNext,
     visual: ThirdVisual,
     projectLink: "https://pl-fe-may23-codecrusaders.github.io/product_catalog/",
+    codeLink: "https://github.com/Capoverde"
+  },
+  {
+    title: "FullStack ToDo Applicaton",
+    describe: "The FullStack ToDo Application, developed using React.js and Typescript, offers a seamless blend of a modern UI and powerful functionality. It showcases the effectiveness of React.js and the reliability of Typescript for creating dynamic and scalable web solutions with an intuitive task management experience.",
+    id: "to-do-app",
+    card: TodoApp,
+    visual: TodoVisual,
+    projectLink: "https://Capoverde.github.io/react_todo-app-with-api/",
     codeLink: "https://github.com/Capoverde"
   },
   {
