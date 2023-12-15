@@ -9,13 +9,13 @@ return (
   <div className={classNames("fixed inset-0 flex items-center justify-center transition-opacity duration-500",
                              fullScreenFeature === id ? "opacity-100" : "opacity-0 "
                              )}>
-      <div className='flex justify-center items-center 
+      {/* <div className='flex justify-center items-center 
                       w-screen h-screen px-4 py-auto
                       bg-black
                       relative'
-      >
+      > */}
         {children}
-      </div>
+      {/* </div> */}
   </div>
  );
 };
@@ -53,7 +53,7 @@ export const OtherVisual = ({id}) => {
         <Image 
          alt="logoDiv.png"
          src="/todoViewsBG.png"
-         width={1800}
+         width={1000}
          height={1000}
         />
       </Visual>

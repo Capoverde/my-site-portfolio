@@ -100,7 +100,7 @@ const PortfolioPage = () => {
          {at:"<"}],
         [".active-card .gradient", {oapcity: 0, scale: 0}, {at:"<"}],
         [".active-card .show-me-btn", {opacity: 0}, {at:"<"}], 
-        [".back-to-site-btn", {opacity: 1, y: "0px"}, {at:"<", duration: 0.3}]
+        [".back-to-site-btn", {opacity: 1, y: "0px", translateX:"-50%" }, {at:"<", duration: 0.3}]
       ])
     } else {
       animate([
@@ -137,7 +137,8 @@ const PortfolioPage = () => {
                   onClick={() => setFullScreenFeature(null)}
               
                   className="back-to-site-btn
-                             fixed bottom-0 left-1/2 -translate-x-1/2 translate-y-[300%] 
+                             fixed bottom-0 left-1/2 
+                             translate-y-[300%] 
                            bg-black rounded-full px-8 py-4 mb-4 border-gray-700 text-gray-200
                              shadow-lg opacity-0 z-10"
               >
