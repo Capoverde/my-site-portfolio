@@ -1,0 +1,25 @@
+.faceTextMask{
+    position: relative;
+    font-size: 0.6em;
+    letter-spacing: -0.05em;
+    line-height: 0.7em;
+    background-image: url(../../../public/Ja6.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    background-blend-mode:difference;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-animation 3s  1s  forwards ease-in-out;
+}
+
+@keyframes text-animation {
+    from {
+        font-size: 4em;
+    }
+    to {
+        font-size: 0.6em;
+    }
+}

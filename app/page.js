@@ -6,6 +6,7 @@ import { motion as m } from "framer-motion";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { NavLinks } from "./components/NavLinks/NavLinks";
+import { HomePagePhoto } from "./components/HomePagePhoto/HomePagePhoto";
 import styles from "./Styles/HomePage.module.css";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
@@ -179,13 +180,13 @@ export default function Home() {
                        className="text-gray-600 border-b border-[#3e3e3e]" />
             </m.div>
           </div>  
-          <m.div
+          {/* <m.div
             className="ml-auto z-[30] absolute top-0 right-0 "
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-          >
-            <Image
+          > */}
+            {/* <Image
               src="/Ja4.png"
               alt="Piotr Słobiński"
               width={0}
@@ -193,8 +194,9 @@ export default function Home() {
               sizes="100%"
               style={{ width: "100%", height: "100vh", objectFit: "cover"}}
               className={`${styles.profileImage} `}
-            />
-          </m.div>
+            /> */}
+            <HomePagePhoto className="absolute top-0 right-[-50%]"/>
+          {/* </m.div> */}
         </section>
       </main>
       <Footer />
