@@ -12,7 +12,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: text-animation 3s  1s  forwards ease-in-out;
+    animation: text-animation 8s  1s  forwards ease-in-out;
 }
 
 @keyframes text-animation {

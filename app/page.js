@@ -77,6 +77,7 @@ export default function Home() {
           `}
           ></div>
         </div>
+        {/* SECTION */}
         <section
           className={`${styles.HomePage__section}
                      h-full w-full z-50
@@ -180,12 +181,12 @@ export default function Home() {
                        className="text-gray-600 border-b border-[#3e3e3e]" />
             </m.div>
           </div>  
-          {/* <m.div
+          <m.div
             className="ml-auto z-[30] absolute top-0 right-0 "
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-          > */}
+          >
             {/* <Image
               src="/Ja4.png"
               alt="Piotr Słobiński"
@@ -195,8 +196,8 @@ export default function Home() {
               style={{ width: "100%", height: "100vh", objectFit: "cover"}}
               className={`${styles.profileImage} `}
             /> */}
-            <HomePagePhoto className="absolute top-0 right-[-50%]"/>
-          {/* </m.div> */}
+            <HomePagePhoto className="absolute top-0 ml-auto right-[-50%]"/>
+          </m.div>
         </section>
       </main>
       <Footer />
